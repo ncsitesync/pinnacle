@@ -1,0 +1,2719 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Pinnacle Projects LLC | Underground Utilities &amp; Sitework for Builders in NC</title>
+<meta name="description" content="Underground utility installation, grading, excavation, and site prep for builders, general contractors, and developers across North Carolina. Request a bid.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14110f">
+
+<!-- Sets the hook every scroll-reveal's hidden state is scoped under
+     (html.js-anim ...). Runs synchronously, before body renders, so
+     there's never a flash of visible-then-hidden content. Skipped under
+     prefers-reduced-motion so those rules never match at all — relying on
+     the reveal animations themselves to reach their end state would fail,
+     since the sitewide `@media(prefers-reduced-motion:reduce){animation:
+     none!important}` rule cancels them outright. If this script is
+     blocked entirely, .js-anim never lands and nothing ever hides. -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.add('js-anim');
+  }
+</script>
+
+<!-- SITE URL: replace https://pinnacle-projects.vercel.app everywhere in <head> when the real domain is live -->
+<link rel="canonical" href="https://pinnacle-projects.vercel.app/">
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pinnacle Projects LLC">
+<meta property="og:title" content="Pinnacle Projects LLC | Underground Utilities &amp; Sitework for Builders in NC">
+<meta property="og:description" content="Underground utility installation, grading, excavation, and site prep for builders, general contractors, and developers across North Carolina. Request a bid.">
+<meta property="og:url" content="https://pinnacle-projects.vercel.app/">
+<meta property="og:image" content="https://pinnacle-projects.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Excavation and site prep job site at sunset in North Carolina">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pinnacle Projects LLC | Underground Utilities &amp; Sitework for Builders in NC">
+<meta name="twitter:description" content="Underground utility installation, grading, excavation, and site prep for builders, general contractors, and developers across North Carolina. Request a bid.">
+<meta name="twitter:image" content="https://pinnacle-projects.vercel.app/assets/og-image.jpg">
+
+<!-- the hero photo is the LCP element, so it gets a head start -->
+<link rel="preload" as="image" href="assets/heroimagenew.webp" type="image/webp" fetchpriority="high">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* type */
+    --font-display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+
+    /* palette — warm charcoal base, never flat #000 */
+    --bg:#14110f;
+    --bg-2:#1c1815;      /* raised bands */
+    --bg-3:#241f1b;      /* cards */
+    --ink:#f4f0ea;       /* 16.6:1 on --bg */
+    --muted:#b5aca1;     /*  8.4:1 on --bg */
+    --muted-dim:#a89e93; /*  7.1:1 on --bg */
+    /* The two brand accents. Solid gold #c9a227 and solid clay #8c4a2f are too
+       dark to sit on --bg as text, so they only ever appear as low-alpha tints
+       written literally — rgba(201,162,39,…) and rgba(140,74,47,…) — and the
+       -lite variants below are what text and icons actually use. */
+    --gold-lite:#e3c06a; /* 10.8:1 on --bg — the gold used for text/icons */
+    --clay-lite:#c9744e; /* clay used as text, 5.5:1 on --bg */
+    --line:rgba(244,240,234,.13);
+    --line-strong:rgba(244,240,234,.22);
+
+    /* the metallic sweep — reserved for the primary CTA, the rules, and the
+       service underline. Used sparingly so it still reads as "polished". */
+    --metal:linear-gradient(135deg,#8a6d1f 0%,#e8c766 22%,#b8912f 42%,#f0d98a 64%,#9a7a25 86%,#c9a227 100%);
+
+    /* scale */
+    --fs-hero:clamp(2.3rem,6vw,4.4rem);
+    --fs-h2:clamp(1.75rem,3.4vw,2.6rem);
+    --fs-h3:clamp(1.1rem,1.8vw,1.35rem);
+    --fs-lead:clamp(1rem,1.3vw,1.1rem);
+    --fs-body:1rem;
+
+    --maxw:1180px;
+    --gutter:22px;
+    --header-h:64px;
+    --header-max:1140px;
+    --radius:16px;
+    --radius-lg:22px;
+    --space-section:clamp(64px,9vw,112px);
+    --ease:cubic-bezier(.4,0,.2,1);
+    --spring:cubic-bezier(.34,1.56,.64,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;overflow-x:hidden;background:var(--bg);color:var(--muted);
+    font-family:var(--font-body);font-size:var(--fs-body);line-height:1.65;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0;}
+  ul,ol{padding:0;list-style:none;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
+  a{color:inherit;text-decoration:none;}
+  button,input,select,textarea{font:inherit;color:inherit;}
+  [id]{scroll-margin-top:calc(var(--header-h) + 40px);}
+  :focus-visible{outline:2px solid var(--gold-lite);outline-offset:3px;border-radius:2px;}
+  .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .icon{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+  .container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);}
+
+  /* a hairline gold rule — one of the few places the metal gradient appears */
+  .rule{height:1px;border:0;background:var(--metal);opacity:.55;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;
+    font-family:var(--font-body);font-weight:600;font-size:.98rem;letter-spacing:.01em;white-space:nowrap;
+    transition:transform .2s var(--ease),box-shadow .25s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);
+  }
+  .btn-gold{
+    background:var(--metal);color:#14110f;font-weight:700;
+    box-shadow:0 10px 26px rgba(201,162,39,.22),inset 0 1px 0 rgba(255,255,255,.35);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(201,162,39,.32),inset 0 1px 0 rgba(255,255,255,.45);}
+  .btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-strong);}
+  .btn-ghost:hover{background:rgba(244,240,234,.06);box-shadow:inset 0 0 0 1px var(--gold-lite);}
+  .btn .icon{width:1.1em;height:1.1em;stroke-width:2;}
+  .btn-sm{min-height:44px;padding:0 20px;font-size:.92rem;}
+
+  /* ---------- header capsule ---------- */
+  .site-header{position:fixed;left:0;right:0;top:16px;z-index:150;pointer-events:none;}
+  .header-capsule{
+    pointer-events:auto;
+    width:min(var(--header-max),100% - 28px);margin-inline:auto;min-height:var(--header-h);
+    display:flex;align-items:center;gap:18px;padding:0 10px 0 16px;
+    background:rgba(28,24,21,.82);
+    backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid var(--line);border-radius:999px;
+    box-shadow:0 14px 40px rgba(0,0,0,.45);
+    transition:background-color .3s var(--ease),border-color .3s var(--ease);
+  }
+  .site-header.stuck .header-capsule{background:rgba(20,17,15,.94);border-color:var(--line-strong);}
+  .brand{display:inline-flex;align-items:center;gap:11px;flex-shrink:0;}
+  /* Height-locked, width auto — so a logo with different proportions than
+     the square placeholder never stretches or gets cropped. max-width keeps
+     a wide lockup from pushing the nav out of the capsule. */
+  .brand img{height:38px;width:auto;max-width:140px;border-radius:9px;}
+  .brand-text{display:flex;flex-direction:column;line-height:1;}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:.02em;}
+  .brand-sub{margin-top:3px;font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dim);}
+  .nav{flex:1;display:flex;justify-content:center;}
+  .nav-list{display:flex;gap:30px;}
+  .nav-list a{
+    position:relative;display:inline-block;padding:.5em 0;
+    font-size:.93rem;font-weight:500;color:var(--muted);transition:color .2s var(--ease);
+  }
+  .nav-list a::after{
+    content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--gold-lite);
+    transition:right .3s var(--ease);
+  }
+  .nav-list a:hover,.nav-list a.is-active{color:var(--ink);}
+  .nav-list a:hover::after,.nav-list a.is-active::after{right:0;}
+  .header-cta{flex-shrink:0;}
+  .menu-btn{
+    display:none;align-items:center;justify-content:center;gap:9px;
+    min-height:44px;padding:0 16px;margin-left:auto;
+    background:transparent;border:1px solid var(--line-strong);border-radius:999px;
+    color:var(--ink);font-weight:600;font-size:.9rem;cursor:pointer;
+  }
+  .menu-btn .icon{width:17px;height:17px;stroke-width:2;}
+
+  /* mobile menu overlay */
+  .nav-overlay{
+    position:fixed;inset:0;z-index:300;background:var(--bg);display:flex;flex-direction:column;
+    padding:calc(20px + env(safe-area-inset-top)) var(--gutter) calc(28px + env(safe-area-inset-bottom));
+    opacity:0;visibility:hidden;transform:translateY(-4%);
+    transition:opacity .25s var(--ease),transform .35s var(--spring),visibility 0s .35s;
+  }
+  .nav-overlay.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .35s var(--spring);}
+  .overlay-top{display:flex;justify-content:space-between;align-items:center;}
+  .overlay-close{
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--line-strong);background:transparent;
+    color:var(--ink);display:grid;place-items:center;cursor:pointer;
+  }
+  .overlay-close .icon{width:19px;height:19px;stroke-width:2;}
+  .overlay-list{margin-top:40px;}
+  .overlay-list a{
+    display:block;padding:18px 0;border-bottom:1px solid var(--line);
+    font-family:var(--font-display);font-size:1.9rem;font-weight:700;color:var(--ink);
+  }
+  .overlay-foot{margin-top:auto;display:grid;gap:12px;}
+  .overlay-foot .btn{width:100%;}
+  .overlay-contact{display:grid;gap:6px;font-size:.95rem;}
+  .overlay-contact a{color:var(--muted);}
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative;
+    min-height:100vh;   /* fallback for browsers without svh support */
+    min-height:100svh;
+    display:flex;flex-direction:column;
+    padding-top:calc(var(--header-h) + 54px);padding-bottom:0;overflow:hidden;background:var(--bg-2);
+  }
+  .hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;}
+  /* 44% keeps the excavator/trench/crew — the main subject — centered in the
+     narrow crop a mobile viewport forces, instead of true image-center,
+     which sits closer to the empty road and truck at right. */
+  .hero-media img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:44% 55%;}
+  /* CSS stand-in that shows until the real photo exists — a golden-hour
+     horizon over dark ground, not a grey "broken image" box. It sits at
+     z-index 0 so a loaded photo paints straight over it; if the file is
+     missing, onerror strips the <img> and this is what's left. */
+  .photo-ph{position:absolute;inset:0;z-index:0;background:var(--bg-2);}
+  .photo-ph::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 70% at 62% 78%,rgba(201,162,39,.22) 0%,transparent 58%),
+      linear-gradient(to bottom,#2a2119 0%,#3a2c1e 34%,#241c16 62%,#171310 100%);
+  }
+  .photo-ph::after{  /* film grain so the flat gradient doesn't band */
+    content:"";position:absolute;inset:0;opacity:.11;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .photo-ph .ph-art{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:min(46%,320px);height:auto;aspect-ratio:1;color:rgba(244,240,234,.13);stroke-width:.7;
+  }
+  .photo-ph .ph-note{
+    position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,240,234,.34);white-space:nowrap;
+  }
+  /* Dark scrim so the serif headline stays readable over the photo. Re-checked
+     against the current hero shot: even the brightest sun band, with only the
+     lightest gradient stop over it, still lands at 7:1 for the headline, so
+     this is kept deliberately light — the photo is the point, the scrim only
+     has to protect the text and seat the header and spec plate. */
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(to bottom,rgba(20,17,15,.72) 0%,rgba(20,17,15,.34) 32%,rgba(20,17,15,.46) 66%,rgba(20,17,15,.9) 100%),
+      radial-gradient(90% 60% at 50% 46%,transparent 0%,rgba(20,17,15,.3) 100%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding-bottom:40px;
+    /* keeps the crest clear of the floating header on page load, at every size */
+    padding-top:calc(var(--header-h) + 32px + env(safe-area-inset-top));
+  }
+  .hero-text{display:contents;}   /* just a grouping node until the 1024px grid below gives it a real layout role */
+  /* Wrapper carries all spacing/positioning (and, on mobile only, the disc
+     backing) — pseudo-elements can't target an <img> directly, which is
+     why the disc/ring described for this crest never actually showed up. */
+  .hero-crest-wrap{display:block;margin:0 auto 20px;}
+  .hero-crest{display:block;width:88px;height:auto;margin:0;border-radius:50%;filter:drop-shadow(0 4px 18px rgba(212,175,55,.25));}
+  .hero h1{
+    max-width:16ch;font-size:var(--fs-hero);line-height:1.02;letter-spacing:-.02em;
+    text-wrap:balance;text-shadow:0 2px 30px rgba(0,0,0,.5);
+  }
+  .hero h1 em{font-style:normal;color:var(--gold-lite);}
+  .hero-sub{
+    max-width:52ch;margin-top:20px;font-size:var(--fs-lead);color:var(--ink);opacity:.9;
+    text-wrap:pretty;text-shadow:0 1px 16px rgba(0,0,0,.5);
+  }
+  /* short mobile copy swapped in by the 768px breakpoint below — desktop
+     shows the full version and hides the short one */
+  .hero-sub-short{display:none;}
+  .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px;}
+  .hero-reel{
+    display:inline-flex;align-items:center;gap:12px;margin-top:26px;background:none;border:0;cursor:pointer;
+    color:var(--ink);font-size:.9rem;font-weight:500;
+  }
+  .hero-reel[hidden]{display:none;}
+  .reel-ring{
+    width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+    border:1px solid var(--line-strong);background:rgba(244,240,234,.06);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease);
+  }
+  .reel-ring .icon{width:17px;height:17px;fill:currentColor;stroke:none;margin-left:2px;}
+  .hero-reel:hover .reel-ring{border-color:var(--gold-lite);background:rgba(201,162,39,.16);transform:scale(1.06);}
+
+  /* ---------- hero split layout: text left, crest right (desktop only) ---------- */
+  @media (min-width:1024px){
+    .hero-inner{
+      display:grid;grid-template-columns:60% 40%;gap:32px;align-items:center;
+      text-align:left;max-width:var(--header-max);   /* same max-width as the header capsule, not the wider site --maxw */
+    }
+    /* Both items need an explicit grid-row, not just grid-column. Without it,
+       the auto-placement cursor (which advances through DOM order) hits
+       .hero-crest (column 2) first, moving past column 2 — then when
+       .hero-text (column 1) is placed, its column is *less than* the
+       cursor's column, which per the grid spec forces a row increment.
+       That pushed the text to row 2 while the crest stayed in row 1,
+       reading as "crest above the headline" instead of side-by-side. */
+    .hero-text{display:block;grid-column:1;grid-row:1;}   /* cancel the mobile display:contents trick — it needs to be one real grid cell here */
+    .hero-actions{justify-content:flex-start;}
+    /* Headline font-size is set by the fit-one-screen block below (a taller
+       vh-based clamp that also supersedes this one at every width here) —
+       still needs the same column-width headroom, just checked against
+       that formula instead. */
+    /* Grid placement moves to the wrapper — it's the actual direct child of
+       the grid now that the img is nested inside it. */
+    .hero-crest-wrap{grid-column:2;grid-row:1;justify-self:center;margin:0;}
+    /* Shifted from the mobile/base 44% anchor so the crest — now sitting over
+       the right side of the photo — doesn't land squarely on the truck; the
+       excavator/trench group (the main subject) stays under the text column
+       either way. Some overlap with the trailer is unavoidable at this crop. */
+    .hero-media img{object-position:32% 55%;}
+    /* Same max-width and gutter as .hero-inner (both use --header-max + the
+       shared --gutter padding), so the strip's edges land exactly under the
+       headline's left edge and the header capsule's right edge. */
+    .spec-plate{max-width:var(--header-max);}
+  }
+
+  /* ---------- desktop fit-one-screen ----------
+     Placed after the 1024px split-layout block above so it wins the cascade
+     from 1024px up (same selectors, later source); it also covers the
+     769-1023px gap on its own, where the layout is still the single-column
+     centered one (the grid only switches on at 1024px) — sizing just scales
+     a little differently there, nothing breaks.
+     .hero's own padding-top (54px, set at the top of this file) and
+     .hero-inner's own padding-top (32px, same place) were stacking two
+     separate header-clearance paddings, on top of each other — the actual
+     gap ends up header-h + 86px, not the ~24px this task wants. Zeroing
+     .hero's here and making hero-inner's the only one collapses that. */
+  @media (min-width:769px){
+    .hero{padding-top:0;}
+    .hero-inner{
+      padding-top:calc(var(--header-h) + 24px);
+      padding-bottom:24px;
+    }
+    /* vh-based so both shrink on shorter laptop windows instead of
+       overflowing them. The ceiling is 3.8rem, not the 4.5rem a straight
+       "clamp(2.6rem,7.5vh,4.5rem)" would give — checked against real
+       Playfair Display glyph metrics: at 1920x950 (7.5vh = 4.45rem) the
+       4.5rem ceiling renders "Underground Utilities." at ~711px against a
+       ~638px column, a 72px overflow that wraps the line. 3.8rem keeps
+       ~32px of clearance there and scales normally at the two shorter
+       targets (never reaching the ceiling at 1366x650 or 1440x780). */
+    .hero h1{font-size:clamp(2.6rem,7.5vh,3.8rem);}
+    .hero-crest{width:clamp(180px,30vh,240px);}
+    .hero-sub{margin-top:16px;}
+    .hero-actions{margin-top:24px;}
+    /* pinned to the hero's bottom edge, ~24px of breathing room above the strip */
+    .spec-plate{margin-top:auto;padding-bottom:24px;}
+  }
+  /* Short desktop windows (e.g. 1366x650): trim a bit further so the strip
+     never gets pushed past the fold. */
+  @media (min-width:769px) and (max-height:700px){
+    .hero-sub{margin-top:12px;}
+    .hero-actions{margin-top:16px;}
+    .spec-plate{padding-bottom:16px;}
+    .spec-plate li{padding:10px 12px;}
+  }
+
+  /* ---------- credibility strip: spec plate, sits on the hero's bottom edge ---------- */
+  .spec-plate{
+    position:relative;z-index:3;width:100%;max-width:var(--maxw);margin:0 auto;
+    padding:0 var(--gutter) 26px;
+  }
+  .spec-plate ul{
+    /* 3, not 4 — "Licensed & insured" is hidden until confirmed, so only 3
+       <li> are ever visible. A 4-track grid left an empty trailing column. */
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;
+    background:rgba(20,17,15,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  }
+  .spec-plate li{
+    display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;
+    padding:15px 12px;text-align:center;border-right:1px solid var(--line);
+  }
+  .spec-plate li:last-child{border-right:0;}
+  .spec-plate li[hidden]{display:none;}   /* display:flex above would otherwise win over the UA hidden default */
+  .spec-plate b{
+    font-family:var(--font-body);font-weight:700;font-size:.95rem;color:var(--ink);letter-spacing:.01em;
+  }
+  .spec-plate span{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-dim);}
+
+  /* ================= SECTIONS ================= */
+  .section{padding-block:var(--space-section);}
+  .section-head{max-width:640px;}
+  .section-head.center{margin-inline:auto;text-align:center;}
+  .section-head h2{font-size:var(--fs-h2);text-wrap:balance;}
+  .section-head p{margin-top:16px;font-size:var(--fs-lead);color:var(--muted);text-wrap:pretty;}
+
+  /* ---------- overview ---------- */
+  .overview{position:relative;overflow:hidden;}
+  .overview-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:55% 45%;column-gap:clamp(40px,5vw,72px);row-gap:0;
+    grid-template-areas:"intro who" "link link";
+  }
+  .overview-intro{grid-area:intro;}
+  .overview-intro h2{font-size:clamp(2rem,3.6vw,2.8rem);max-width:16ch;}
+  .overview-lead{margin-top:22px;max-width:60ch;font-size:var(--fs-lead);color:var(--ink);}
+  .overview-body{margin-top:18px;max-width:60ch;}
+  .overview-link{
+    grid-area:link;margin-top:28px;display:inline-flex;align-items:center;gap:7px;
+    font-weight:600;font-size:.94rem;color:var(--gold-lite);
+    text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;
+    transition:text-decoration-color .2s var(--ease);
+  }
+  .overview-link:hover{text-decoration-color:var(--gold-lite);}
+  .overview-link .icon{width:14px;height:14px;stroke-width:2.2;}
+  .overview-who{grid-area:who;}
+  .overview-who h3{font-size:.95rem;font-weight:700;margin-bottom:18px;}
+  .overview-list{position:relative;padding-left:28px;}
+  /* the vertical gold line: a pseudo-element (not a real border) so it can
+     be drawn in via transform — with no JS/no html.js-anim it just
+     renders at scaleY(1), identical to a plain static rule */
+  .overview-list::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:1px;
+    background:rgba(201,162,39,.4);transform:scaleY(1);transform-origin:top;pointer-events:none;
+  }
+  .overview-list li{padding:16px 0;border-top:1px solid rgba(201,162,39,.18);}
+  .overview-list li:first-child{border-top:0;padding-top:0;}
+  .overview-list b{display:block;font-weight:600;color:var(--ink);font-size:.98rem;}
+  .overview-list span{display:block;margin-top:4px;font-size:.88rem;color:var(--muted);line-height:1.5;}
+  .overview-homeowners{margin-top:16px;font-size:.88rem;color:var(--muted);line-height:1.5;}
+
+  /* ---------- overview: one-time scroll-in reveal ----------
+     Hidden state only applies under html.js-anim (set synchronously in
+     <head> — see there — so there's no flash of visible-then-hidden
+     content, and if JS is blocked entirely .js-anim never lands and
+     nothing ever hides). .is-visible (added by the shared observer in
+     the main script on first intersection) plays the reveal for the
+     heading/intro/who-list, same as before. */
+  html.js-anim .overview .overview-intro h2,
+  html.js-anim .overview .overview-lead,
+  html.js-anim .overview .overview-body{opacity:0;transform:translateY(14px);}
+  html.js-anim .overview .overview-list::before{transform:scaleY(0);}
+  html.js-anim .overview .overview-list li,
+  html.js-anim .overview .overview-homeowners{opacity:0;transform:translateY(10px);}
+  @keyframes ovRise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes ovRiseSm{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes ovLineY{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  .overview.is-visible .overview-intro h2{animation:ovRise .5s var(--ease) 0s both;}
+  .overview.is-visible .overview-lead{animation:ovRise .45s var(--ease) .15s both;}
+  .overview.is-visible .overview-body{animation:ovRise .45s var(--ease) .3s both;}
+  .overview.is-visible .overview-list::before{animation:ovLineY .7s ease-out .6s both;}
+  .overview.is-visible .overview-list li:nth-child(1){animation:ovRiseSm .4s var(--ease) .6s both;}
+  .overview.is-visible .overview-list li:nth-child(2){animation:ovRiseSm .4s var(--ease) .69s both;}
+  .overview.is-visible .overview-list li:nth-child(3),
+  .overview.is-visible .overview-homeowners{animation:ovRiseSm .4s var(--ease) .78s both;}
+
+  @media (max-width:1023px){
+    .overview-grid{grid-template-columns:1fr;grid-template-areas:"intro" "who" "link";}
+    .overview-lead{max-width:none;}
+    .overview-who{margin-top:40px;}
+    .overview-title-br{display:none;}
+  }
+
+  /* ---------- services: "what we specialize in" alternating split rows ---------- */
+  /* padding-bottom:0 — the section ends with full-bleed rows, so "Recent
+     work"'s own padding-top is the only gap; without this, the two
+     stacked (services' bottom + work's top) padded into one visibly
+     oversized dead band. */
+  .services{background:var(--bg-2);padding-bottom:0;}
+  /* Lives outside .container (a sibling of it, not nested) so it spans the
+     full section width — true edge-to-edge, no negative-margin trick
+     needed. The section's own heading/subline stay in .container above. */
+  .spec-rows{margin-top:44px;}
+  .spec-row{
+    display:flex;height:380px;border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  .spec-row:last-child{border-bottom:0;}
+  /* even rows flip photo/text sides; padding below still targets the
+     correct physical side since flex-direction:row-reverse only changes
+     visual order, not which edge is "left" vs "right" on each box */
+  .spec-row:nth-child(2n){flex-direction:row-reverse;}
+  .spec-row-photo{position:relative;width:50%;overflow:hidden;}
+  .spec-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .spec-row-text{
+    width:50%;display:flex;flex-direction:column;justify-content:center;
+    padding:0 var(--gutter);
+  }
+  /* Text's outer edge (the side facing the viewport edge, not the photo)
+     lines up with where .container's own edge sits, instead of running
+     to the raw viewport edge on wide monitors. */
+  .spec-row:nth-child(2n+1) .spec-row-text{padding-right:max(var(--gutter),calc((100vw - var(--maxw)) / 2));}
+  .spec-row:nth-child(2n) .spec-row-text{padding-left:max(var(--gutter),calc((100vw - var(--maxw)) / 2));}
+  /* alternating panel tone — site charcoal vs. a lighter/warmer charcoal —
+     so the rows read as distinct bands */
+  .spec-row:nth-child(2n+1) .spec-row-text{background:var(--bg);}
+  .spec-row:nth-child(2n) .spec-row-text{background:var(--bg-3);}
+  .spec-row-inner{max-width:480px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+  .spec-ico{width:30px;height:30px;color:var(--gold-lite);stroke-width:1.4;}
+  .spec-row-text h3{font-size:2rem;letter-spacing:0;}
+  .spec-rule{width:40px;height:2px;background:var(--gold-lite);transform-origin:left;}
+  .spec-row-text p{font-size:.95rem;color:var(--ink);line-height:1.6;max-width:50ch;}
+  .spec-jobs{display:flex;flex-wrap:wrap;gap:8px;}
+  .spec-jobs li{
+    padding:5px 12px;border:1px solid rgba(201,162,39,.35);border-radius:999px;
+    font-size:.76rem;color:var(--muted);white-space:nowrap;
+  }
+  .spec-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:4px;}
+  .spec-bid{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 22px;border-radius:999px;border:1px solid rgba(201,162,39,.5);
+    font-size:.9rem;font-weight:600;color:var(--ink);
+    transition:background-color .2s var(--ease),border-color .2s var(--ease);
+  }
+  .spec-bid:hover{background:rgba(201,162,39,.12);border-color:rgba(201,162,39,.7);}
+
+  /* ---------- services: one-time reveal, per row as it scrolls into view ----------
+     Hidden state only applies under html.js-anim (see <head>). Each row
+     is its own [data-reveal] target, so it gets its own .is-visible from
+     the shared observer (see initReveals in the main script) when IT —
+     not the section as a whole — scrolls into view. Only transform,
+     opacity, and clip-path are ever animated. */
+  html.js-anim .services .spec-row:nth-child(2n+1) .spec-row-photo{clip-path:inset(0 100% 0 0);}
+  html.js-anim .services .spec-row:nth-child(2n) .spec-row-photo{clip-path:inset(0 0 0 100%);}
+  html.js-anim .services .spec-photo{transform:scale(1.06);}
+  html.js-anim .services .spec-ico,
+  html.js-anim .services .spec-row-text h3,
+  html.js-anim .services .spec-row-text p,
+  html.js-anim .services .spec-jobs,
+  html.js-anim .services .spec-actions{opacity:0;transform:translateY(10px);}
+  html.js-anim .services .spec-rule{transform:scaleX(0);}
+  @keyframes specWipeL{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0 0 0 0);}}
+  @keyframes specWipeR{from{clip-path:inset(0 0 0 100%);}to{clip-path:inset(0 0 0 0);}}
+  @keyframes specSettle{from{transform:scale(1.06);}to{transform:scale(1);}}
+  @keyframes specRowRise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes specRuleX{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  .spec-row:nth-child(2n+1).is-visible .spec-row-photo{animation:specWipeL .8s ease-out both;}
+  .spec-row:nth-child(2n).is-visible .spec-row-photo{animation:specWipeR .8s ease-out both;}
+  .spec-row.is-visible .spec-photo{transform:scale(1);animation:specSettle 1s ease-out both;}
+  .spec-row.is-visible .spec-ico{animation:specRowRise .4s var(--ease) .8s both;}
+  .spec-row.is-visible .spec-row-text h3{animation:specRowRise .4s var(--ease) .87s both;}
+  .spec-row.is-visible .spec-rule{animation:specRuleX .35s ease-out .94s both;}
+  .spec-row.is-visible .spec-row-text p{animation:specRowRise .4s var(--ease) 1.01s both;}
+  .spec-row.is-visible .spec-jobs{animation:specRowRise .4s var(--ease) 1.08s both;}
+  .spec-row.is-visible .spec-actions{animation:specRowRise .4s var(--ease) 1.15s both;}
+
+  /* ---------- services: hover polish (desktop, real pointer only) ---------- */
+  @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+    .spec-photo{transition:transform .6s var(--ease);}
+    .spec-row:hover .spec-photo{transform:scale(1.03);}
+  }
+  @media (max-width:1023px){
+    .spec-row{height:320px;}
+  }
+  /* Placed after the 1023px block above so its height:auto wins the
+     cascade from 767px down (same specificity, later source). */
+  @media (max-width:767px){
+    .spec-row,.spec-row:nth-child(2n){flex-direction:column;height:auto;}
+    .spec-row-photo{width:100%;height:220px;}
+    .spec-row-text{width:100%;}
+    .spec-row:nth-child(2n+1) .spec-row-text,
+    .spec-row:nth-child(2n) .spec-row-text{padding:24px;}
+  }
+
+  /* ---------- our work ---------- */
+  .work-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .work-nav{display:flex;gap:10px;}
+  .work-btn{
+    width:50px;height:50px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+    background:transparent;border:1px solid var(--line-strong);color:var(--ink);
+    transition:border-color .2s var(--ease),background-color .2s var(--ease),opacity .2s var(--ease);
+  }
+  .work-btn:hover:not(:disabled){border-color:var(--gold-lite);background:rgba(201,162,39,.14);}
+  .work-btn:disabled{opacity:.3;cursor:default;}
+  .work-btn .icon{width:19px;height:19px;stroke-width:2;}
+  /* Coverflow stage: .work-track gives perspective + clips overflow; each
+     .work-card is absolutely centered, then pushed to its fanned slot by
+     --pos (signed slot offset, set by JS) and --dist (abs(--pos)). --card-w
+     drives both the card width and the track's height, so the two can never
+     drift out of sync at any breakpoint. */
+  .work-track{
+    --card-w:clamp(210px,24vw,270px);
+    --step:64%;--rot:30deg;
+    position:relative;margin-top:38px;
+    height:calc(var(--card-w) * 4 / 3 + 4px);
+    overflow:hidden;perspective:1400px;
+  }
+  .work-card{
+    --pos:0;--dist:0;
+    position:absolute;top:50%;left:50%;width:var(--card-w);cursor:pointer;
+    transform:
+      translate(-50%,-50%)
+      translateX(calc(var(--pos) * var(--step)))
+      translateZ(calc(var(--dist) * -90px))
+      rotateY(calc(var(--pos) * -1 * var(--rot)))
+      scale(calc(1 - var(--dist) * .14));
+    z-index:calc(10 - var(--dist));
+    opacity:calc(1 - var(--dist) * .3);
+    transition:transform .45s var(--ease),opacity .45s var(--ease);
+  }
+  .work-card.is-far{opacity:0;pointer-events:none;visibility:hidden;}
+  .work-card[aria-current="true"]{cursor:default;opacity:1;}
+  .work-card:focus-visible{outline:2px solid var(--gold-lite);outline-offset:4px;border-radius:24px;}
+  .work-shot{
+    position:relative;width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;
+    background:var(--bg-3);border:1px solid rgba(201,162,39,.28);
+    box-shadow:0 20px 46px rgba(0,0,0,.4);
+  }
+  .work-card[aria-current="true"] .work-shot{box-shadow:0 26px 60px rgba(0,0,0,.5),0 6px 18px rgba(201,162,39,.16);}
+  .work-shot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s var(--ease);}
+  /* the water-line and storm-drainage photos look straight down a long
+     trench — shifting up keeps the excavator/catch-basin in frame instead
+     of cropping toward the foreground gravel */
+  .work-shot--trench img{object-position:center 40%;}
+  .work-card:hover .work-shot img{transform:scale(1.04);}
+  /* z-index 2 keeps the scrim above the photo (which sits at 1 so it can
+     cover the placeholder underneath it); 3 is the caption panel on top of that */
+  .work-shot::after{
+    content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(to top,rgba(20,17,15,.78) 0%,transparent 50%);
+  }
+  .work-meta{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:12px 14px;}
+  .work-meta h3{font-size:.92rem;}
+  .work-meta .icon{width:14px;height:14px;color:var(--clay-lite);stroke-width:2;}
+  .work-count,.work-desc,.work-loc{display:none;}
+  /* frosted panel + full copy: active card only. Solid fallback first,
+     upgraded to blur where supported. */
+  .work-card[aria-current="true"] .work-meta{
+    padding:16px 16px 14px;background:var(--bg);border-top:1px solid rgba(201,162,39,.25);
+  }
+  @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .work-card[aria-current="true"] .work-meta{
+      background:rgba(20,17,15,.58);
+      backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);
+    }
+  }
+  .work-card[aria-current="true"] .work-meta h3{font-size:1.15rem;}
+  .work-card[aria-current="true"] .work-count,
+  .work-card[aria-current="true"] .work-desc{display:block;}
+  /* .work-loc needs its own reveal rule at display:flex, not block — grouped
+     with the other two above, its higher specificity was beating the base
+     .work-loc{display:flex} rule below regardless of source order, which is
+     what stacked the pin icon above the town text instead of beside it. */
+  .work-card[aria-current="true"] .work-loc{display:flex;}
+  .work-count-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+  .work-count{font-family:var(--font-body);font-size:.72rem;letter-spacing:.1em;color:var(--muted-dim);white-space:nowrap;}
+  .work-desc{margin-top:6px;font-size:.82rem;line-height:1.4;color:var(--muted);}
+  .work-loc{
+    display:flex;align-items:center;gap:6px;margin-top:8px;
+    font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-dim);
+  }
+  .work-dots{display:flex;justify-content:center;gap:9px;margin-top:24px;}
+  .work-dot{
+    width:9px;height:9px;padding:0;border-radius:50%;border:0;cursor:pointer;
+    transition:background-color .2s var(--ease),width .25s var(--ease),border-radius .25s var(--ease);
+    background:var(--line-strong);
+  }
+  /* stretches into a pill instead of just scaling up */
+  .work-dot[aria-current="true"]{background:var(--metal);width:22px;border-radius:5px;}
+  .work-dot:hover{background:var(--gold-lite);}
+  .work-dot:focus-visible{outline:2px solid var(--gold-lite);outline-offset:3px;}
+  .work-note{margin-top:22px;font-size:.88rem;color:var(--muted-dim);}
+
+  /* ---------- work-card motion: gold top-edge glint on activation ----------
+     Lives on .work-card (its ::after is free — the scrim already owns
+     .work-shot's ::after), so it isn't clipped by .work-shot's own
+     overflow:hidden; the matching corner radius keeps it looking seated
+     against the photo underneath. Transform + opacity only, per the brief. */
+  .work-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;z-index:6;pointer-events:none;
+    border-radius:20px 20px 0 0;
+    background:linear-gradient(90deg,transparent,rgba(227,192,106,.7),transparent);
+    transform:translateX(-100%);opacity:0;
+  }
+  /* .work-track.has-entered gates all four of these: the first card ships
+     with aria-current="true" already in the static HTML (so the carousel
+     works with no JS), which would otherwise make this whole group fire
+     the instant the page loads, regardless of scroll position. JS adds
+     .has-entered once, at the same moment the fan-out entrance reveal
+     plays (see initWorkEntrance) — after that it stays put, so every real
+     aria-current change from further carousel navigation still replays
+     these exactly as before. */
+  .work-track.has-entered .work-card[aria-current="true"]::before{animation:workGlint .6s var(--ease);}
+  @keyframes workGlint{
+    0%{transform:translateX(-100%);opacity:0;}
+    45%{opacity:1;}
+    100%{transform:translateX(100%);opacity:0;}
+  }
+
+  /* Slow one-time drift on the active photo only. Pure CSS: toggling
+     aria-current makes this rule stop/start matching, which restarts the
+     animation fresh each time — no JS needed, and it "resets" to scale(1)
+     on deactivation via the existing transition on .work-shot img. */
+  @keyframes workDrift{from{transform:scale(1);}to{transform:scale(1.06);}}
+  .work-track.has-entered .work-card[aria-current="true"] .work-shot img{animation:workDrift 8s cubic-bezier(.2,.8,.2,1) forwards;}
+
+  /* Caption stagger on activation: title+counter, then description, then
+     location. Also driven purely by the aria-current toggle. */
+  @keyframes workRise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .work-track.has-entered .work-card[aria-current="true"] .work-count-row{animation:workRise .35s var(--ease) both;}
+  .work-track.has-entered .work-card[aria-current="true"] .work-desc{animation:workRise .35s var(--ease) .06s both;}
+  .work-track.has-entered .work-card[aria-current="true"] .work-loc{animation:workRise .35s var(--ease) .12s both;}
+
+  /* Pointer-tracked sheen on the active card only, desktop with a real
+     mouse (see JS) — --mx/--my are set on mousemove. Gated in CSS too so a
+     touch device's sticky :hover can't leave it stuck on. */
+  @media (hover:hover) and (pointer:fine){
+    .work-card[aria-current="true"] .work-shot::before{
+      content:"";position:absolute;inset:0;z-index:5;pointer-events:none;
+      background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(244,240,234,.1),transparent 55%);
+      opacity:0;transition:opacity .3s var(--ease);
+    }
+    .work-card[aria-current="true"] .work-shot:hover::before{opacity:1;}
+  }
+
+  @media (max-width:768px){
+    .work-track{--card-w:min(78vw,300px);--step:46%;--rot:14deg;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .work-card{transition:none;transform:translate(-50%,-50%);}
+    .work-card:not([aria-current="true"]){opacity:0;visibility:hidden;pointer-events:none;}
+    /* entrance and tilt are gated in JS; these are the pure-CSS pieces */
+    .work-card::before{content:none;}
+    .work-card[aria-current="true"] .work-shot img{animation:none;}
+    .work-card[aria-current="true"] .work-count-row,
+    .work-card[aria-current="true"] .work-desc,
+    .work-card[aria-current="true"] .work-loc{animation:none;}
+    .work-card[aria-current="true"] .work-shot::before{display:none;}
+  }
+
+  /* ---------- about ----------
+     the one place the clay/graded-dirt tone carries a whole surface, so the
+     section reads warm and earthy rather than just another dark band */
+  .about{position:relative;background:var(--bg-2);overflow:hidden;}
+  .about::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(70% 90% at 12% 18%,rgba(140,74,47,.2) 0%,transparent 62%);
+  }
+  .about .container{position:relative;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;}
+  /* Border-radius/border/shadow and the caption's frosted-panel treatment
+     match .work-shot / the carousel's active-card panel, so the owner
+     photo reads as part of the same visual language. */
+  .about-figure{
+    position:relative;aspect-ratio:4/5;max-width:420px;border-radius:20px;overflow:hidden;
+    border:1px solid rgba(201,162,39,.28);
+    box-shadow:0 26px 60px rgba(0,0,0,.5),0 6px 18px rgba(201,162,39,.16);
+  }
+  .about-figure img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 25%;}
+  .about-caption{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 16px 14px;
+    background:var(--bg);border-top:1px solid rgba(201,162,39,.25);
+  }
+  @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .about-caption{
+      background:rgba(20,17,15,.58);
+      backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);
+    }
+  }
+  .about-caption b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--ink);font-weight:700;}
+  .about-caption span{display:block;margin-top:3px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dim);}
+  .about-body p+p{margin-top:18px;}
+  .about-body .lead{margin-top:20px;font-size:var(--fs-lead);color:var(--ink);}
+  .about-sign{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);}
+  .about-sign b{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--ink);font-weight:700;}
+  .about-sign span{display:block;margin-top:4px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dim);}
+
+  /* ---------- about: one-time scroll-in reveal ----------
+     Hidden state only applies under html.js-anim (see <head>); .is-visible
+     (added by the shared observer on first intersection) plays the
+     reveal. With JS off, html.js-anim never lands, so nothing here ever
+     hides anything — the section just renders in its normal, final state.
+     Only transform, opacity, clip-path, and border-color are animated. */
+  .about .about-sign{position:relative;}
+  /* stand-in for .about-sign's own border-top, so the divider is
+     animatable (a border-width can't be transitioned); sits exactly on
+     top of the real line, so with no JS/no html.js-anim it just reads
+     as a normal static divider. */
+  .about .about-sign::before{
+    content:"";position:absolute;top:-1px;left:0;right:0;height:1px;
+    background:var(--line);transform:scaleX(1);transform-origin:left;pointer-events:none;
+  }
+  .js-anim .about .about-figure{clip-path:inset(100% 0 0 0 round 20px);}
+  .js-anim .about .about-figure img{transform:scale(1.08);}
+  .js-anim .about .about-caption{opacity:0;transform:translateY(12px);}
+  .js-anim .about .section-head h2{opacity:0;transform:translateY(14px);}
+  .js-anim .about .about-body>p:not(.about-sign){opacity:0;transform:translateY(10px);}
+  .js-anim .about .about-sign{border-top-color:transparent;}
+  .js-anim .about .about-sign::before{transform:scaleX(0);}
+  .js-anim .about .about-sign b,
+  .js-anim .about .about-sign span{opacity:0;}
+  @keyframes aboutSettle{from{transform:scale(1.08);}to{transform:scale(1);}}
+  .about.is-visible .about-figure{clip-path:inset(0 0 0 0 round 20px);transition:clip-path .9s ease-out;}
+  .about.is-visible .about-figure img{transform:scale(1);animation:aboutSettle 1.4s ease-out;}
+  .about.is-visible .about-caption{opacity:1;transform:translateY(0);transition:opacity .4s var(--ease) .9s,transform .4s var(--ease) .9s;}
+  .about.is-visible .section-head h2{opacity:1;transform:translateY(0);transition:opacity .5s var(--ease) .2s,transform .5s var(--ease) .2s;}
+  .about.is-visible .about-body>p:not(.about-sign):nth-child(2){opacity:1;transform:translateY(0);transition:opacity .45s var(--ease) .7s,transform .45s var(--ease) .7s;}
+  .about.is-visible .about-body>p:not(.about-sign):nth-child(3){opacity:1;transform:translateY(0);transition:opacity .45s var(--ease) .8s,transform .45s var(--ease) .8s;}
+  .about.is-visible .about-body>p:not(.about-sign):nth-child(4){opacity:1;transform:translateY(0);transition:opacity .45s var(--ease) .9s,transform .45s var(--ease) .9s;}
+  .about.is-visible .about-sign::before{transform:scaleX(1);transition:transform .6s ease-out 1.35s;}
+  .about.is-visible .about-sign b,
+  .about.is-visible .about-sign span{opacity:1;transition:opacity .4s var(--ease) 1.95s;}
+  @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+    .about .about-figure{transition:border-color .3s var(--ease);}
+    .about .about-figure img{transition:transform .6s var(--ease);}
+    .about .about-figure:hover{border-color:rgba(201,162,39,.5);}
+    .about .about-figure:hover img{transform:scale(1.03);}
+  }
+
+  /* ---------- built for the construction schedule ---------- */
+  .schedule-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;row-gap:40px;margin-top:44px;}
+  .schedule-pt{position:relative;padding-top:22px;}
+  .schedule-pt::before{
+    content:"";position:absolute;top:0;left:0;width:48px;height:2px;
+    background:var(--gold-lite);transform:scaleX(1);transform-origin:left;
+  }
+  .schedule-ico{width:26px;height:26px;margin-top:18px;color:var(--gold-lite);stroke-width:1.4;}
+  .schedule-pt h3{margin-top:12px;font-size:1.35rem;letter-spacing:0;}
+  .schedule-pt p{margin-top:8px;color:var(--muted);max-width:48ch;}
+  .schedule-cta{margin-top:40px;}
+  @media (max-width:1023px){
+    .schedule-grid{grid-template-columns:1fr;}
+    .schedule-cta{text-align:center;}
+  }
+
+  /* ---------- built for the construction schedule: one-time scroll-in
+     reveal ----------
+     Hidden state only applies under html.js-anim (see <head>); with no
+     JS it never lands, so everything just renders in its normal, final
+     state. .is-visible (added by the shared observer on intersection)
+     plays the reveal. Only transform and opacity are ever animated. */
+  html.js-anim .schedule .section-head h2,
+  html.js-anim .schedule .section-head p{opacity:0;transform:translateY(14px);}
+  html.js-anim .schedule .schedule-pt::before{transform:scaleX(0);}
+  html.js-anim .schedule .schedule-ico,
+  html.js-anim .schedule .schedule-pt h3,
+  html.js-anim .schedule .schedule-pt p{opacity:0;transform:translateY(10px);}
+  html.js-anim .schedule .schedule-cta{opacity:0;}
+  @keyframes schRise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes schRiseSm{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes schLineX{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  @keyframes schFade{from{opacity:0;}to{opacity:1;}}
+  .schedule.is-visible .section-head h2{animation:schRise .5s var(--ease) 0s both;}
+  .schedule.is-visible .section-head p{animation:schRise .45s var(--ease) .12s both;}
+  .schedule.is-visible .schedule-pt:nth-child(1)::before{animation:schLineX .5s ease-out .6s both;}
+  .schedule.is-visible .schedule-pt:nth-child(2)::before{animation:schLineX .5s ease-out .72s both;}
+  .schedule.is-visible .schedule-pt:nth-child(3)::before{animation:schLineX .5s ease-out .84s both;}
+  .schedule.is-visible .schedule-pt:nth-child(4)::before{animation:schLineX .5s ease-out .96s both;}
+  .schedule.is-visible .schedule-pt:nth-child(1) .schedule-ico,
+  .schedule.is-visible .schedule-pt:nth-child(1) h3,
+  .schedule.is-visible .schedule-pt:nth-child(1) p{animation:schRiseSm .45s var(--ease) 1.1s both;}
+  .schedule.is-visible .schedule-pt:nth-child(2) .schedule-ico,
+  .schedule.is-visible .schedule-pt:nth-child(2) h3,
+  .schedule.is-visible .schedule-pt:nth-child(2) p{animation:schRiseSm .45s var(--ease) 1.22s both;}
+  .schedule.is-visible .schedule-pt:nth-child(3) .schedule-ico,
+  .schedule.is-visible .schedule-pt:nth-child(3) h3,
+  .schedule.is-visible .schedule-pt:nth-child(3) p{animation:schRiseSm .45s var(--ease) 1.34s both;}
+  .schedule.is-visible .schedule-pt:nth-child(4) .schedule-ico,
+  .schedule.is-visible .schedule-pt:nth-child(4) h3,
+  .schedule.is-visible .schedule-pt:nth-child(4) p{animation:schRiseSm .45s var(--ease) 1.46s both;}
+  .schedule.is-visible .schedule-cta{animation:schFade .4s var(--ease) 1.9s both;}
+  /* No prefers-reduced-motion override needed here — the <head> script
+     that adds html.js-anim skips it entirely under reduced motion, so
+     none of this section's hidden-state rules ever match and everything
+     just renders in its normal, final state from the very first paint. */
+
+  /* ---------- sticky call button ----------
+     Reuses .btn.btn-gold for the pill styling/hover so it matches the
+     primary CTA exactly; this class only adds the fixed positioning and
+     the scroll-triggered fade. Redeclares .btn's transition list (rather
+     than just adding opacity) so this rule — same specificity, later in
+     source — doesn't blow away the hover-lift transition instead of
+     extending it. */
+  /* Hidden by default (page load = hero on screen) instead of shown-until-
+     told-otherwise, so there's no flash of the button over the hero before
+     JS/the observers get a chance to run. visibility gets a .25s delay here
+     (removed on .is-visible) so it only leaves the tab order once the fade
+     to opacity:0 has actually finished, not the instant the class drops —
+     same delayed-visibility technique as .nav-overlay above. */
+  .call-fab{
+    position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:200;
+    opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;
+    transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s .25s,
+               box-shadow .25s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);
+  }
+  .call-fab.is-visible{
+    opacity:1;visibility:visible;pointer-events:auto;
+    transition:opacity .25s var(--ease),transform .25s var(--ease),
+               box-shadow .25s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);
+  }
+  /* :not(:hover) so this doesn't fight .btn-gold:hover's own translateY(-2px)
+     lift — same specificity (two classes vs one class + :hover), and without
+     this guard whichever rule happened to come later in the file would win
+     outright instead of hover winning only while actually hovering. */
+  .call-fab.is-visible:not(:hover){transform:translateY(0);}
+  @media (max-width:768px){
+    .call-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .call-fab,.call-fab.is-visible{transition:none;}
+  }
+
+  /* ---------- contact ---------- */
+  /* More specific than the global [id]{scroll-margin-top:header-h+40px} rule
+     (see near the top of the file) — just for #contact, at the ~24px this
+     step asks for, instead of the site-wide default. */
+  #contact{scroll-margin-top:calc(var(--header-h) + 24px);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,68px);align-items:start;}
+  .form-card{
+    background:var(--bg-3);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:clamp(24px,3vw,36px);box-shadow:0 24px 60px rgba(0,0,0,.35);
+  }
+  .field{display:grid;gap:6px;margin-bottom:14px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field label{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .field input,.field select,.field textarea{
+    width:100%;min-height:46px;padding:12px 15px;border-radius:10px;
+    background:rgba(20,17,15,.6);border:1px solid var(--line-strong);color:var(--ink);
+    font-size:1rem;transition:border-color .2s var(--ease),background-color .2s var(--ease);
+  }
+  /* rows="3" on the textarea itself now governs its height, so no min-height here */
+  .field textarea{resize:vertical;line-height:1.55;}
+  /* .quiz-field-err (step 6's per-field errors) collapses to zero height
+     when empty instead of reserving space up front. Added as its own rule
+     rather than editing the shared .quiz-field-err,.quiz-err{min-height}
+     rule further down, so #quizErr — the step-level error every other step
+     also uses — keeps its existing reserved space untouched. */
+  .quiz-field-err:empty{min-height:0;}
+  /* #7d746b read as a nicer grey but only hit 3.9:1 on the input fill —
+     nudged up to clear 4.5:1 while still sitting back from the entered text */
+  .field input::placeholder,.field textarea::placeholder{color:#928981;}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--gold-lite);background:rgba(20,17,15,.85);
+  }
+  .field select{appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b5aca1' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:44px;}
+  .field select option{background:#241f1b;color:var(--ink);}
+  .form-card .btn{width:100%;margin-top:6px;}
+  .form-note{margin-top:14px;font-size:.82rem;color:var(--muted-dim);text-align:center;}
+  .form-status{
+    margin-top:16px;padding:14px 16px;border-radius:10px;font-size:.92rem;
+    border:1px solid var(--line-strong);background:rgba(20,17,15,.55);color:var(--ink);
+  }
+  .form-status[hidden]{display:none;}
+  .form-status.ok{border-color:rgba(201,162,39,.5);}
+
+  .contact-list{display:grid;gap:26px;margin-top:34px;}
+  .contact-item{display:flex;gap:16px;align-items:flex-start;}
+  .contact-item .ci-ico{
+    flex-shrink:0;width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.3);color:var(--gold-lite);
+  }
+  .contact-item .ci-ico .icon{width:19px;height:19px;stroke-width:1.8;}
+  /* the service-area tile picks up the clay accent instead of gold — it's the
+     "where the dirt is" item, and it keeps the column from being all gold */
+  .ci-ico.clay{background:rgba(140,74,47,.22);border-color:rgba(201,116,78,.45);color:var(--clay-lite);}
+  .contact-item h3{font-family:var(--font-body);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dim);}
+  .contact-item a,.contact-item p{margin-top:4px;font-size:1.05rem;color:var(--ink);}
+  .contact-item a:hover{color:var(--gold-lite);}
+  .towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .towns li{
+    padding:5px 13px;border-radius:999px;border:1px solid var(--line);
+    font-size:.84rem;color:var(--muted);
+  }
+  .towns li.placeholder{border-style:dashed;color:var(--muted-dim);}
+
+  /* ---------- contact: multi-step quote quiz ---------- */
+  .quiz-progress{margin-bottom:22px;}
+  .quiz-progress-label{
+    display:flex;justify-content:space-between;gap:12px;
+    font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  }
+  .quiz-progress-track{height:6px;border-radius:999px;background:rgba(244,240,234,.1);margin-top:8px;overflow:hidden;}
+  .quiz-progress-fill{display:block;height:100%;width:14.3%;background:var(--metal);border-radius:999px;transition:width .35s var(--ease);}
+  #quizForm{position:relative;}
+  .quiz-step{border:0;margin:0;padding:0;min-width:0;}
+  .quiz-step[hidden]{display:none;}
+  .quiz-step legend{
+    padding:0;font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:16px;
+  }
+  .quiz-step legend:focus-visible,.quiz-step legend:focus{outline:none;}   /* programmatic focus target, not a tab stop */
+  .quiz-note{margin:-10px 0 16px;font-size:.82rem;color:var(--muted-dim);}
+  .field-label-text{display:block;margin-bottom:6px;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+  /* ---------- quiz: plans upload zone ---------- */
+  .upload-zone{
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;
+    padding:26px 20px;border:1.5px dashed rgba(201,162,39,.4);border-radius:var(--radius);
+    text-align:center;cursor:pointer;transition:border-color .2s var(--ease),background-color .2s var(--ease);
+  }
+  .upload-zone:hover{border-color:rgba(201,162,39,.6);}
+  .upload-zone:focus-within{outline:2px solid var(--gold-lite);outline-offset:3px;}
+  .upload-zone.is-dragover{border-color:var(--gold-lite);background:rgba(201,162,39,.08);}
+  .upload-ico{width:26px;height:26px;color:var(--gold-lite);stroke-width:1.4;}
+  .upload-text{font-size:.95rem;color:var(--muted);}
+  .upload-browse{color:var(--gold-lite);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+  .upload-hint{font-size:.78rem;color:var(--muted-dim);}
+  .upload-list{margin-top:10px;display:grid;gap:8px;}
+  .upload-item{
+    display:flex;align-items:center;gap:10px;padding:8px 12px;
+    border:1px solid var(--line);border-radius:10px;background:rgba(20,17,15,.4);
+  }
+  .upload-item .icon{width:16px;height:16px;color:var(--muted-dim);flex-shrink:0;stroke-width:1.8;}
+  .upload-name{flex:1;min-width:0;font-size:.88rem;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .upload-size{flex-shrink:0;font-size:.78rem;color:var(--muted-dim);}
+  .upload-remove{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;border:0;background:none;
+    color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:color .2s var(--ease);
+  }
+  .upload-remove:hover{color:#e2685a;}
+  .upload-remove .icon{width:12px;height:12px;stroke-width:2.2;}
+
+  /* ---------- shared: small spinner for "Sending…" button states ---------- */
+  .btn-spinner{
+    display:inline-block;width:14px;height:14px;margin-right:2px;vertical-align:-2px;
+    border:2px solid rgba(20,17,15,.35);border-top-color:#14110f;border-radius:50%;
+    animation:btnSpin .7s linear infinite;
+  }
+  @keyframes btnSpin{to{transform:rotate(360deg);}}
+  @keyframes quizOutL{from{opacity:1;transform:translateX(0);}to{opacity:0;transform:translateX(-28px);}}
+  @keyframes quizOutR{from{opacity:1;transform:translateX(0);}to{opacity:0;transform:translateX(28px);}}
+  @keyframes quizInR{from{opacity:0;transform:translateX(28px);}to{opacity:1;transform:translateX(0);}}
+  @keyframes quizInL{from{opacity:0;transform:translateX(-28px);}to{opacity:1;transform:translateX(0);}}
+  /* outgoing step is pulled out of flow so the incoming one governs the
+     form's height immediately, instead of the two stacking while both
+     are briefly visible mid-transition */
+  .quiz-step.is-out-l,.quiz-step.is-out-r{position:absolute;top:0;left:0;right:0;}
+  .quiz-step.is-out-l{animation:quizOutL .3s var(--ease) both;}
+  .quiz-step.is-out-r{animation:quizOutR .3s var(--ease) both;}
+  .quiz-step.is-in-r{animation:quizInR .3s var(--ease) both;}
+  .quiz-step.is-in-l{animation:quizInL .3s var(--ease) both;}
+
+  .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;}
+  .opt{position:relative;display:block;}
+  .opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:2;}
+  .opt-face{
+    display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 14px;
+    border-radius:14px;border:1px solid var(--line-strong);background:var(--bg-2);color:var(--ink);
+    transition:border-color .2s var(--ease),background-color .2s var(--ease),transform .1s ease-out;
+  }
+  .opt-ico{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:var(--gold-lite);}
+  .opt-label{flex:1;min-width:0;font-size:.92rem;font-weight:600;line-height:1.3;}
+  .opt-label small{display:block;font-weight:400;font-size:.8rem;color:var(--muted-dim);margin-top:1px;}
+  .opt-check{
+    flex:none;position:relative;width:20px;height:20px;border-radius:50%;
+    border:1.5px solid var(--line-strong);transition:background-color .2s var(--ease),border-color .2s var(--ease);
+  }
+  .opt input:hover+.opt-face{border-color:rgba(201,162,39,.45);}
+  .opt input:focus-visible+.opt-face{outline:2px solid var(--gold-lite);outline-offset:3px;}
+  .opt input:checked+.opt-face{border-color:var(--gold-lite);background:rgba(201,162,39,.1);}
+  .opt input:checked+.opt-face .opt-check{background:var(--metal);border-color:transparent;}
+  .opt input:checked+.opt-face .opt-check::after{
+    content:"";position:absolute;left:50%;top:44%;width:5px;height:9px;
+    border:solid #14110f;border-width:0 2px 2px 0;transform:translate(-50%,-50%) rotate(45deg);
+  }
+  .opt input:active+.opt-face{transform:scale(.98);}
+
+  .quiz-consent{
+    display:flex;gap:10px;align-items:flex-start;margin-top:6px;margin-bottom:18px;
+    font-size:.82rem;line-height:1.45;color:var(--muted);cursor:pointer;
+  }
+  .quiz-consent input{margin-top:3px;width:17px;height:17px;flex-shrink:0;accent-color:var(--gold-lite);}
+  .quiz-consent a{color:var(--gold-lite);}
+  .quiz-field-err,.quiz-err{min-height:1.2em;font-size:.82rem;font-weight:600;color:#e2685a;}
+  .quiz-field-err{margin-top:6px;}
+  .quiz-err{margin:4px 0 0;}
+  .quiz-err:empty,.quiz-field-err:empty{margin:0;}
+
+  .quiz-nav{display:flex;align-items:center;gap:14px;margin-top:22px;}
+  .quiz-nav .btn{flex:1;width:auto;margin-top:0;}
+  /* ID-scoped (not .btn-gold) so this only ever touches the quiz's own Next
+     button, not the gold pill elsewhere on the page. The ID's specificity
+     also means it wins over .btn-gold:hover without needing pointer-events,
+     so the not-allowed cursor still shows if the mouse sits over it. */
+  #quizNext:disabled{opacity:.5;box-shadow:none;transform:none;cursor:not-allowed;}
+  .quiz-back{
+    flex:none;background:none;border:0;padding:8px 2px;cursor:pointer;
+    font-size:.88rem;font-weight:600;color:var(--muted);transition:color .2s var(--ease);
+  }
+  .quiz-back:hover{color:var(--gold-lite);}
+  .quiz-back[hidden]{display:none;}
+
+  .quiz-done{text-align:center;padding:8px 0;}
+  .quiz-done-badge{
+    width:56px;height:56px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;
+    background:var(--metal);color:#14110f;
+  }
+  .quiz-done-badge .icon{width:26px;height:26px;stroke-width:2.4;}
+  .quiz-done h3{font-size:1.3rem;}
+  .quiz-done > p{margin-top:8px;color:var(--muted);}
+  .quiz-recap{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:left;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;}
+  .quiz-recap dt{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-dim);}
+  .quiz-recap dd{font-size:.92rem;color:var(--ink);}
+  .quiz-done .form-note{margin-top:20px;}
+
+  @media (max-width:768px){
+    .opt-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .quiz-step.is-out-l,.quiz-step.is-out-r,.quiz-step.is-in-r,.quiz-step.is-in-l{animation:none;position:static;opacity:1;transform:none;}
+  }
+
+  /* ---------- add us to your bid list ---------- */
+  .bid-list{background:var(--bg-2);border-top:1px solid rgba(201,162,39,.18);}
+  .bid-list-grid{display:grid;grid-template-columns:40% 60%;gap:clamp(32px,4vw,56px);align-items:center;}
+  .bid-list-intro h2{font-size:var(--fs-h2);max-width:14ch;}
+  .bid-list-intro p{margin-top:14px;color:var(--muted);max-width:42ch;}
+  .bid-list-card{
+    background:var(--bg-3);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:clamp(24px,3vw,32px);box-shadow:0 24px 60px rgba(0,0,0,.3);
+  }
+  .bid-list-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+  .bid-list-form .btn{width:auto;margin-top:8px;padding-inline:32px;}
+  .bid-list-done{text-align:center;padding:10px 0;}
+  .bid-list-done p{color:var(--ink);font-size:1.05rem;}
+  .bid-list-done[hidden]{display:none;}
+  /* ---- one-time reveal, matching the other sections' pattern: hidden
+     state only applies under html.js-anim (see <head>; skipped under
+     reduced motion), so with no JS (or reduced motion) everything just
+     renders in its normal, final state. .is-visible (added by the shared
+     observer on intersection) plays the single fade-up. ---- */
+  html.js-anim .bid-list .bid-list-intro,
+  html.js-anim .bid-list .bid-list-card{opacity:0;transform:translateY(14px);}
+  @keyframes blRise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .bid-list.is-visible .bid-list-intro{animation:blRise .5s var(--ease) 0s both;}
+  .bid-list.is-visible .bid-list-card{animation:blRise .5s var(--ease) .1s both;}
+  @media (max-width:900px){
+    .bid-list-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .bid-list-fields{grid-template-columns:1fr;}
+  }
+
+  /* ---------- footer ---------- */
+  .footer{background:#0f0d0b;border-top:1px solid var(--line);padding:56px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;}
+  .foot-brand p{margin-top:16px;max-width:34ch;font-size:.94rem;color:var(--muted-dim);}
+  .footer h3{font-family:var(--font-body);font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
+  .footer li+li{margin-top:9px;}
+  .footer a{color:var(--muted-dim);font-size:.94rem;transition:color .2s var(--ease);}
+  .footer a:hover{color:var(--gold-lite);}
+  .ig-link{display:inline-flex;align-items:center;gap:9px;}
+  .ig-link .icon{width:17px;height:17px;stroke-width:1.8;}
+  .foot-bottom{
+    margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;
+    font-size:.84rem;color:#928981;   /* 5.6:1 on the footer fill */
+  }
+  .foot-credit a{
+    color:var(--gold-lite);text-decoration:underline;text-decoration-color:transparent;
+    text-underline-offset:3px;transition:text-decoration-color .2s var(--ease);
+  }
+  .foot-credit a:hover{text-decoration-color:var(--gold-lite);}
+
+  /* ================= MOTION =================
+     One entrance only: a blur-in on load, staggered across the hero. Nothing
+     else animates on scroll — hover states carry the rest. */
+  @keyframes blurIn{
+    from{opacity:0;filter:blur(14px);transform:translateY(14px);}
+    to{opacity:1;filter:blur(0);transform:none;}
+  }
+  .blur-in{animation:blurIn .9s var(--ease) both;}
+  .d1{animation-delay:.05s;} .d2{animation-delay:.16s;} .d3{animation-delay:.27s;}
+  .d4{animation-delay:.38s;} .d5{animation-delay:.5s;}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:1040px){
+    .nav-list{gap:22px;}
+  }
+  @media (max-width:900px){
+    .nav,.header-cta{display:none;}
+    .menu-btn{display:inline-flex;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    /* ~24px between the photo and the heading below it — scoped to
+       .about-grid alone, not grouped with .contact-grid above, so the
+       contact section's own row spacing isn't touched */
+    .about-grid{gap:24px;}
+    /* width:100% is the actual fix: .about-figure only ever had max-width,
+       and a grid item with no explicit width relies on stretch to become
+       definite before aspect-ratio can derive a height from it — that's
+       the "height of 0 from aspect-ratio" case, and it's what was making
+       the photo (and the absolutely-positioned <img> filling it) collapse
+       to nothing on mobile despite every other rule being correct. */
+    .about-figure{width:100%;max-width:320px;margin-inline:auto;}
+    /* his name already appears under the text via .about-sign on mobile —
+       don't show it twice */
+    .about-caption{display:none;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+    .foot-brand{grid-column:1 / -1;}
+  }
+  @media (max-width:720px){
+    .hero{padding-top:calc(var(--header-h) + 42px);}
+    .hero-inner{padding-bottom:34px;}
+    .hero h1{max-width:none;}
+    .hero-actions{width:100%;flex-direction:column;align-items:stretch;}
+    .hero-actions .btn{width:100%;}
+    .work-track{
+      margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);
+    }
+    .work-card{flex-basis:76vw;}
+    .field-row{grid-template-columns:1fr;gap:0;}
+    .foot-grid{grid-template-columns:1fr;gap:34px;}
+    .foot-bottom{flex-direction:column;align-items:center;text-align:center;gap:6px;}
+    .foot-credit{order:1;}
+    .foot-privacy{order:2;}
+    .foot-bottom [data-cfg="serviceArea"]{order:3;}
+  }
+
+  /* ---------- mobile hero fixes: headline crowding the header, oversized
+     type, cramped buttons, and the stat grid overflowing the photo.
+     Placed after the 720px breakpoint above so these rules win over it
+     wherever the two overlap (720px and under). ---------- */
+  @media (max-width:768px){
+    /* Fit-one-screen: .hero already has min-height:100svh + display:flex
+       from the base rule (never overridden here — a hard height would need
+       overflow handling to avoid clipping if content ever runs long, so it
+       stays a minimum, matching the "grow, don't clip" fallback below).
+       .hero's own padding-top (set for ≤720px above) plus hero-inner's own
+       padding-top were stacking two separate header-clearance paddings on
+       top of each other — that's the "big gap." Zeroing .hero's here and
+       letting hero-inner's be the only one collapses it to a single
+       header-h + ~16px gap. */
+    .hero{padding-top:0;}
+    .hero-inner{
+      padding-top:calc(var(--header-h) + 16px + env(safe-area-inset-top));
+      padding-bottom:16px;
+    }
+    .hero-crest-wrap{position:relative;margin:0 auto 14px;}
+    /* Local scrim: a soft dark fog behind the disc so the sunset glow
+       doesn't wash out the crest. z-index needed on all three layers here —
+       ::after normally paints ABOVE real children (the <img>), not below,
+       so without it the disc would cover the logo instead of sitting
+       behind it. */
+    .hero-crest-wrap::before{
+      content:"";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);
+      width:320px;height:320px;border-radius:50%;pointer-events:none;
+      background:radial-gradient(circle,rgba(20,17,15,.55) 0%,transparent 70%);
+    }
+    /* Disc + ring, between the scrim and the logo. inset:-6px on a box
+       exactly the logo's own size is the ~6px padding ring around it. */
+    .hero-crest-wrap::after{
+      content:"";position:absolute;z-index:1;inset:-6px;border-radius:50%;
+      background:rgba(20,17,13,.92);
+      border:1.5px solid var(--gold-lite);
+      box-shadow:0 0 0 6px rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.6),0 0 22px rgba(212,175,55,.35);
+    }
+    .hero-crest{position:relative;z-index:2;width:96px;filter:brightness(1.12) contrast(1.1);}
+    .hero h1{font-size:clamp(2.1rem,7vw,2.6rem);line-height:1.05;}
+    .hero-sub-full{display:none;}
+    .hero-sub-short{display:inline;}
+    .hero-sub{margin-top:14px;max-width:34ch;font-size:.95rem;line-height:1.5;}
+    .hero-actions{gap:6px;align-items:center;margin-top:14px;}
+    /* "Request a bid" is no longer the full-width pill from the 720px
+       breakpoint above — sized to its own content and centered instead */
+    .hero-actions .btn-gold{width:auto;padding-inline:32px;min-height:48px;}
+    /* secondary CTA drops the pill chrome and becomes a plain underlined
+       link — "Request a bid" stays the only full-width gold pill */
+    .hero-actions .btn-ghost{
+      width:auto;min-height:auto;padding:8px 4px;background:none;box-shadow:none;
+      text-decoration:underline;text-underline-offset:4px;
+    }
+    /* Sun and excavator/trench both sit around image x 42–60% (checked by
+       sampling column brightness); the desktop anchor (44%) crops the sun
+       out of the much narrower mobile crop, so shift right slightly. */
+    .hero-media img{object-position:50% 55%;}
+    /* Solid, edge-to-edge band instead of a translucent card floating on
+       the photo — the stat grid reads as its own strip below the hero
+       with no image showing through. 3 equal columns in one row, same as
+       desktop: with only 3 <li> ever visible, a 2-column grid auto-placed
+       the third item alone on its own row, leaving an empty cell beside
+       it — the nth-child border rules that assumed a 2x2 wrap are gone
+       too, since a single row of 3 only needs :last-child{border-right:0}
+       (already in the base rule) to get the dividers right. */
+    /* Inset rounded card matching desktop's look (border + translucent
+       blurred background) instead of the old edge-to-edge solid band.
+       margin-top stays auto to keep it pinned toward the hero's bottom via
+       the flex column; the new side/bottom insets are what make it a card
+       instead of a full-bleed strip. */
+    .spec-plate{
+      width:auto;margin:auto 14px calc(16px + env(safe-area-inset-bottom));padding:0;
+    }
+    .spec-plate ul{
+      grid-template-columns:repeat(3,1fr);
+      border-radius:16px;border:1px solid var(--line-strong);
+      background:rgba(20,17,15,.72);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    }
+    .spec-plate li{padding:8px 6px;gap:2px;}
+    .spec-plate b{font-size:.85rem;}
+    .spec-plate span{font-size:.62rem;}
+    /* The inset card no longer touches the hero's bottom edge (unlike the
+       old full-bleed strip, which covered this exact area) — without this,
+       the last stretch of photo/scrim would end in a hard line against the
+       next section's flat background instead of fading like desktop's card
+       effectively does by sitting flush against that edge. */
+    .hero::after{
+      content:"";position:absolute;left:0;right:0;bottom:0;z-index:1;height:60px;pointer-events:none;
+      background:linear-gradient(to bottom,transparent,var(--bg));
+    }
+  }
+  /* Short phones (e.g. 375x667): the 768px sizing above still runs a little
+     tall, so trim the headline, crest, and gaps one more notch. */
+  @media (max-width:768px) and (max-height:700px){
+    .hero h1{font-size:clamp(1.9rem,6.5vw,2.3rem);}
+    .hero-crest-wrap{margin-bottom:10px;}
+    .hero-crest{width:72px;}
+    .hero-sub{margin-top:10px;}
+    /* trimmed a bit further (was 10px) to give the stat strip's new inset
+       bottom gap (it used to sit flush with no gap) room without pushing
+       the hero past one screen at short viewports like 375x667 */
+    .hero-actions{margin-top:6px;}
+  }
+  @media (max-width:420px){
+    .brand-name{font-size:.94rem;}
+    .brand img{height:34px;max-width:120px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;}
+    .blur-in{opacity:1;filter:none;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- icon sprite: line icons only, no emoji anywhere on the page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.2"/><path d="M3 6.5l9 6 9-6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7V3Z"/><path d="M14 3v5h5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <!-- trade icons -->
+    <symbol id="i-pipe" viewBox="0 0 24 24"><path d="M2 7h9a4 4 0 0 1 4 4v6a4 4 0 0 0 4 4h5"/><path d="M2 4.5v5M22 18.5v5"/></symbol>
+    <symbol id="i-grade" viewBox="0 0 24 24"><path d="M2 17h20"/><path d="M4 17l5.5-7h8l2.5 4"/><path d="M6.5 20.5h11"/></symbol>
+    <symbol id="i-excavator" viewBox="0 0 24 24"><path d="M2 20h20"/><rect x="3" y="13" width="8" height="4.5" rx="1.2"/><path d="M7 13V9.5h4l6-4.5"/><path d="M17 5l3 6-4 2"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21v-4"/><path d="M12 17a5.5 5.5 0 0 0 5.5-5.5c0-1-.3-2-.8-2.8A4.5 4.5 0 0 0 12 3a4.5 4.5 0 0 0-4.7 5.7A5.4 5.4 0 0 0 6.5 11.5 5.5 5.5 0 0 0 12 17Z"/></symbol>
+    <!-- "built for the construction schedule" icons -->
+    <symbol id="i-contact" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6V3Z"/><path d="M15 3v5h4"/><path d="M9 12.5h6M9 16h6M9 9h3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4.5 4.5L19 8"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-1"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-capsule">
+    <a class="brand" href="#top" aria-label="Pinnacle Projects LLC, home">
+      <img src="assets/logo.png?v=2" alt="" width="38" height="38">
+      <span class="brand-text">
+        <span class="brand-name">Pinnacle</span>
+        <span class="brand-sub">Projects LLC</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold btn-sm header-cta" href="#contact">Request a bid</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navOverlay">
+      Menu <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <div class="overlay-top">
+    <span class="brand">
+      <img src="assets/logo.png?v=2" alt="" width="38" height="38">
+      <span class="brand-text">
+        <span class="brand-name">Pinnacle</span>
+        <span class="brand-sub">Projects LLC</span>
+      </span>
+    </span>
+    <button class="overlay-close" id="overlayClose" type="button" aria-label="Close menu">
+      <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+  <ul class="overlay-list">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="overlay-foot">
+    <div class="overlay-contact">
+      <a href="tel:+10000000000" data-cfg-href="phoneHref" data-cfg="phoneDisplay">(000) 000-0000</a>
+      <a href="mailto:hello@example.com" data-cfg-href="emailHref" data-cfg="email">email@placeholder.com</a>
+    </div>
+    <a class="btn btn-gold" href="#contact">Request a bid</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media">
+      <!-- Compressed WebP first, full-quality PNG as the fallback for the rare
+           browser that can't decode WebP. The CSS stand-in behind both stays
+           as a safety net if the files ever go missing. -->
+      <picture>
+        <source srcset="assets/heroimagenew.webp" type="image/webp">
+        <img src="assets/heroimagenew.png"
+             alt="A crawler excavator lowering steel pipe into an open trench at sunset, with a crew in hi-vis and a dually truck and equipment trailer on the graded haul road"
+             width="1672" height="941"
+             onerror="this.remove()" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="photo-ph" aria-hidden="true">
+        <svg class="icon ph-art"><use href="#i-excavator"/></svg>
+      </div>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <!-- same file the header uses; checked its alpha channel and the
+           corners are already fully transparent, so the circular clip
+           below is just a clean boundary, not a mask over a solid fill -->
+      <div class="hero-crest-wrap blur-in d1">
+        <img class="hero-crest" src="assets/logo.png?v=2" alt="" aria-hidden="true" width="88" height="88" loading="eager">
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title blur-in d1" id="hero-title">Underground Utilities.<br>Grading. Site Prep.<br><em>Done Right.</em></h1>
+        <p class="hero-sub blur-in d2">
+          <span class="hero-sub-full">Underground utility installation, grading, excavation, and site prep for builders, general contractors, and developers across North Carolina.</span>
+          <span class="hero-sub-short">Underground utility installation, grading, excavation, and site prep for builders, general contractors, and developers across North Carolina.</span>
+        </p>
+        <div class="hero-actions blur-in d3">
+          <a class="btn btn-gold" href="#contact">Request a bid <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+        <!-- stays hidden until CONFIG.reelUrl is filled in, so no dead button ships -->
+        <button class="hero-reel blur-in d4" id="reelBtn" type="button" hidden>
+          <span class="reel-ring"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
+          Watch the project reel
+        </button>
+      </div>
+    </div>
+
+    <div class="spec-plate blur-in d5">
+      <ul>
+        <li><b>Since 2022</b><span>In business</span></li>
+        <li><b data-cfg="serviceAreaShort">North Carolina</b><span>Service area</span></li>
+        <!-- PLACEHOLDER: confirm licence/insurance wording with Rique before launch.
+             Hidden (not removed) until then — delete this <li> outright if it
+             can't be substantiated. -->
+        <li hidden><b>Licensed &amp; insured</b><span>To confirm</span></li>
+        <!-- Consider "Fast bid turnaround" once Rique confirms his typical bid time -->
+        <li><b>Free estimates</b><span>No obligation</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== OVERVIEW ========== -->
+  <section class="section overview" id="overview" aria-labelledby="overview-title" data-reveal>
+    <div class="container overview-grid">
+      <div class="overview-intro">
+        <h2 id="overview-title">First on site.<br class="overview-title-br"> Ready for what&rsquo;s next.</h2>
+        <p class="overview-lead">Pinnacle Projects LLC is an owner-operated contractor serving builders, general contractors, and developers across North Carolina since 2022.</p>
+        <p class="overview-body">We handle the work that has to happen before anything else can: getting water, sewer, and storm lines in the ground, cutting pads, setting grade, and clearing land so the next trade can build on solid footing. Every job gets a straight bid, careful digging, and a site left clean and ready.</p>
+      </div>
+      <div class="overview-who">
+        <h3>Who we work with</h3>
+        <ul class="overview-list">
+          <li><b>General contractors</b><span>Underground utilities, excavation, grading, and site prep that fits your construction schedule.</span></li>
+          <li><b>Builders</b><span>Lot clearing, building pads, footings, and utility taps done so the next trade can start on time.</span></li>
+          <li><b>Developers &amp; commercial</b><span>Sitework and utility installation for larger residential and commercial projects, from first cut to final grade.</span></li>
+        </ul>
+        <p class="overview-homeowners">Homeowners and landowners: we also take on select lot clearing, driveway, and drainage jobs.</p>
+      </div>
+
+      <a class="overview-link" href="#services">See what we specialize in <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="services-title">What we specialize in</h2>
+        <p>Underground utilities, excavation, grading, and site prep performed to plan, on schedule, and ready for the next phase of construction.</p>
+      </div>
+
+    </div>
+
+    <div class="spec-rows" id="specGrid">
+      <div class="spec-row" data-reveal>
+        <div class="spec-row-photo">
+          <img class="spec-photo" src="assets/waterline.png" alt="Excavator lowering a water line pipe into a trench at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+        </div>
+        <div class="spec-row-text">
+          <div class="spec-row-inner">
+            <svg class="icon spec-ico" aria-hidden="true"><use href="#i-pipe"/></svg>
+            <h3>Underground utilities</h3>
+            <span class="spec-rule" aria-hidden="true"></span>
+            <p>Water, sewer, storm, and conduit runs put in at depth and backfilled right.</p>
+            <ul class="spec-jobs">
+              <li>Water lines</li><li>Sewer lines</li><li>Storm drainage</li><li>Conduit runs</li>
+            </ul>
+            <div class="spec-actions">
+              <a class="spec-bid" href="#contact" data-need="Underground utilities">Request a bid</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec-row" data-reveal>
+        <div class="spec-row-photo">
+          <img class="spec-photo" src="assets/buildinglot.png" alt="Dozer grading a flat building pad at sunset ahead of a new home" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+        </div>
+        <div class="spec-row-text">
+          <div class="spec-row-inner">
+            <svg class="icon spec-ico" aria-hidden="true"><use href="#i-grade"/></svg>
+            <h3>Site prep &amp; grading</h3>
+            <span class="spec-rule" aria-hidden="true"></span>
+            <p>Pads cut, slopes set, and water sent where you want it before the build starts.</p>
+            <ul class="spec-jobs">
+              <li>Building pads</li><li>Rough &amp; final grade</li><li>Slopes &amp; drainage</li><li>Driveway cuts</li>
+            </ul>
+            <div class="spec-actions">
+              <a class="spec-bid" href="#contact" data-need="Site prep &amp; grading">Request a bid</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec-row" data-reveal>
+        <div class="spec-row-photo">
+          <img class="spec-photo" src="assets/footingexca.png" alt="Excavator digging foundation footing trenches at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+        </div>
+        <div class="spec-row-text">
+          <div class="spec-row-inner">
+            <svg class="icon spec-ico" aria-hidden="true"><use href="#i-excavator"/></svg>
+            <h3>Excavation &amp; trenching</h3>
+            <span class="spec-rule" aria-hidden="true"></span>
+            <p>Footings, foundations, and clean trench lines dug to spec and to depth.</p>
+            <ul class="spec-jobs">
+              <li>Footings</li><li>Foundations</li><li>Utility trenches</li><li>Backfill &amp; compaction</li>
+            </ul>
+            <div class="spec-actions">
+              <a class="spec-bid" href="#contact" data-need="Excavation &amp; trenching">Request a bid</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec-row" data-reveal>
+        <div class="spec-row-photo">
+          <img class="spec-photo" src="assets/lotclearing.png" alt="Excavator clearing brush and stumps at a wooded lot edge at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+        </div>
+        <div class="spec-row-text">
+          <div class="spec-row-inner">
+            <svg class="icon spec-ico" aria-hidden="true"><use href="#i-tree"/></svg>
+            <h3>Land clearing</h3>
+            <span class="spec-rule" aria-hidden="true"></span>
+            <p>Brush, stumps, and overgrowth taken off the lot and hauled out of the way.</p>
+            <ul class="spec-jobs">
+              <li>Brush removal</li><li>Stump removal</li><li>Lot clearing</li><li>Debris haul-off</li>
+            </ul>
+            <div class="spec-actions">
+              <a class="spec-bid" href="#contact" data-need="Land clearing">Request a bid</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR WORK ========== -->
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <div class="work-head">
+        <div class="section-head">
+          <h2 id="work-title">Recent work</h2>
+          <p>Job sites across North Carolina. Swipe through a few of them.</p>
+        </div>
+        <div class="work-nav">
+          <button class="work-btn" id="workPrev" type="button" aria-label="Previous projects" aria-controls="workTrack">
+            <svg class="icon" aria-hidden="true"><use href="#i-left"/></svg>
+          </button>
+          <button class="work-btn" id="workNext" type="button" aria-label="Next projects" aria-controls="workTrack">
+            <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project type + town are the captions Rique confirms per photo; the
+           description on the active card is placeholder copy too. JS moves
+           aria-current between cards — that's what drives the fan/frost CSS. -->
+      <ul class="work-track" id="workTrack" aria-label="Recent projects carousel">
+        <li class="work-card" aria-current="true">
+          <div class="work-shot work-shot--trench">
+            <img src="assets/waterline.png" alt="Excavator lowering a blue water line pipe into a trench at sunset" width="941" height="1672" loading="eager" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Water line install</h3><span class="work-count">1 / 6</span></div>
+              <p class="work-desc">Trench cut and pipe set for a new residential water line, backfilled and graded same day.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+        <li class="work-card">
+          <div class="work-shot">
+            <img src="assets/buildinglot.png" alt="Dozer grading a flat building pad at sunset ahead of a new home" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Building lot prep</h3><span class="work-count">2 / 6</span></div>
+              <p class="work-desc">Lot graded and packed flat — grading and pad prep ready for a new home.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+        <li class="work-card">
+          <div class="work-shot">
+            <img src="assets/lotclearing.png" alt="Excavator clearing brush and stumps at a wooded lot edge at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Lot clearing</h3><span class="work-count">3 / 6</span></div>
+              <p class="work-desc">Wooded lot cleared of brush, stumps, and debris, and left ready for site work.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+        <li class="work-card">
+          <div class="work-shot">
+            <img src="assets/footingexca.png" alt="Excavator digging foundation footing trenches at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Footing excavation</h3><span class="work-count">4 / 6</span></div>
+              <p class="work-desc">Footings dug to spec and squared off, ready to hand straight to the framing crew.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+        <li class="work-card">
+          <div class="work-shot work-shot--trench">
+            <img src="assets/stormdrainage.png" alt="Storm drain pipe set on gravel in a trench, tied into a concrete catch basin at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Storm drainage</h3><span class="work-count">5 / 6</span></div>
+              <p class="work-desc">Storm drainage pipe set in an open trench and tied into the existing system.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+        <li class="work-card">
+          <div class="work-shot">
+            <img src="assets/drivewaycut.png" alt="Excavator grading a gravel driveway toward a new home at sunset" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+            <div class="work-meta">
+              <div class="work-count-row"><h3>Driveway cut</h3><span class="work-count">6 / 6</span></div>
+              <p class="work-desc">Driveway cut, shaped, and graded ahead of the stone base.</p>
+              <p class="work-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-town>North Carolina</span></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="work-dots" id="workDots" role="group" aria-label="Choose a project">
+        <button class="work-dot" type="button" aria-current="true" aria-label="Project 1"></button>
+        <button class="work-dot" type="button" aria-label="Project 2"></button>
+        <button class="work-dot" type="button" aria-label="Project 3"></button>
+        <button class="work-dot" type="button" aria-label="Project 4"></button>
+        <button class="work-dot" type="button" aria-label="Project 5"></button>
+        <button class="work-dot" type="button" aria-label="Project 6"></button>
+      </div>
+      <p class="work-note">Photo captions, towns, and descriptions are placeholders &mdash; swap them as the real job photos go in.</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about" aria-labelledby="about-title" data-reveal>
+    <div class="container about-grid">
+      <div class="about-figure">
+        <img src="assets/meetowner.png" alt="Rique Rojo, owner of Pinnacle Projects LLC" width="941" height="1672" loading="lazy" decoding="async" onerror="this.remove()">
+        <div class="photo-ph" aria-hidden="true"><svg class="icon ph-art"><use href="#i-excavator"/></svg><span class="ph-note">assets/meetowner.png</span></div>
+        <div class="about-caption">
+          <b>Rique Rojo</b>
+          <span>Owner, Pinnacle Projects LLC</span>
+        </div>
+      </div>
+      <div class="about-body">
+        <div class="section-head">
+          <h2 id="about-title">Owner-operated since day one</h2>
+        </div>
+        <p class="lead">
+          Rique Rojo started Pinnacle Projects in 2022 with a simple idea: show up, do the dirt work
+          properly, and leave a site the next trade can actually build on.
+        </p>
+        <p>
+          It&rsquo;s still run that way. Rique is on the machine and on the job, so the person quoting
+          your work is the same person doing it. No layers, no handoffs, no crew you&rsquo;ve never met
+          turning up in your driveway.
+        </p>
+        <p>
+          That means straight answers on what a site needs, an honest read on what it&rsquo;ll take,
+          and work that holds up once everything else gets built on top of it.
+        </p>
+        <p class="about-sign">
+          <b>Rique Rojo</b>
+          <span>Owner &middot; Pinnacle Projects LLC</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUILT FOR THE CONSTRUCTION SCHEDULE ========== -->
+  <section class="section schedule" id="why-pinnacle" aria-labelledby="why-pinnacle-title" data-reveal>
+    <div class="container">
+      <div class="section-head">
+        <h2 id="why-pinnacle-title">Built for the construction schedule.</h2>
+        <p>What a project manager can count on when Pinnacle is on site.</p>
+      </div>
+
+      <div class="schedule-grid">
+        <div class="schedule-pt">
+          <svg class="icon schedule-ico" aria-hidden="true"><use href="#i-contact"/></svg>
+          <h3>One point of contact</h3>
+          <p>You talk directly with the owner, the person responsible for the work, from bid through completion.</p>
+        </div>
+        <div class="schedule-pt">
+          <svg class="icon schedule-ico" aria-hidden="true"><use href="#i-plan"/></svg>
+          <h3>Work performed to plan</h3>
+          <p>Scope, elevations, trench depths, and site requirements are reviewed before work begins.</p>
+        </div>
+        <div class="schedule-pt">
+          <svg class="icon schedule-ico" aria-hidden="true"><use href="#i-calendar"/></svg>
+          <h3>Schedule-conscious</h3>
+          <p>We coordinate around the project schedule and let you know right away when site conditions affect the work.</p>
+        </div>
+        <div class="schedule-pt">
+          <svg class="icon schedule-ico" aria-hidden="true"><use href="#i-check"/></svg>
+          <h3>Ready for the next trade</h3>
+          <p>We leave the site graded, backfilled, and ready for what&rsquo;s next.</p>
+        </div>
+      </div>
+
+      <div class="schedule-cta">
+        <a class="btn btn-gold" href="#contact">Request a bid</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky call button — hidden via JS while the quote form (#contact) is
+       on screen; href updates from CONFIG.phoneHref, label always stays
+       "Call us" (data-cfg-href only, no data-cfg, so the text isn't touched) -->
+  <a class="btn btn-gold call-fab" id="callFab" href="tel:+10000000000" data-cfg-href="phoneHref" aria-label="Call Pinnacle Projects">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+    Call us
+  </a>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-head">
+          <h2 id="contact-title">Request a bid</h2>
+          <p>Upload your plans and project details. We&rsquo;ll get back to you with a straight answer on scope, timing, and price.</p>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="ci-ico"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <div>
+              <h3>Phone</h3>
+              <a href="tel:+10000000000" data-cfg-href="phoneHref" data-cfg="phoneDisplay">(000) 000-0000</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:hello@example.com" data-cfg-href="emailHref" data-cfg="email">email@placeholder.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-ico clay"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div>
+              <h3>Service area</h3>
+              <p data-cfg="serviceArea">North Carolina</p>
+              <ul class="towns" id="townList">
+                <li class="placeholder">Town list to be confirmed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="quiz" id="quiz">
+          <div class="quiz-progress">
+            <div class="quiz-progress-label"><span id="quizStepLabel">Step 1 of 7</span><span id="quizStepName">Start with your plans</span></div>
+            <div class="quiz-progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1" id="quizProgressBar">
+              <i class="quiz-progress-fill" id="quizProgressFill"></i>
+            </div>
+          </div>
+
+          <form id="quizForm" novalidate>
+            <!-- Step 1 — plans upload, entirely optional; Next label swaps to
+                 "Skip for now" via JS when no files are attached -->
+            <fieldset class="quiz-step" data-step="0" data-type="upload">
+              <legend tabindex="-1">Start with your plans</legend>
+              <p class="quiz-note">Upload your plans or site drawings and we&rsquo;ll bid straight from them. No plans yet? You can skip this.</p>
+              <div class="field">
+                <span class="field-label-text" id="qPlansHeading">Upload plans or site drawings</span>
+                <label class="upload-zone" id="uploadZone" for="qPlans" aria-describedby="qPlansHeading">
+                  <svg class="icon upload-ico" aria-hidden="true"><use href="#i-upload"/></svg>
+                  <span class="upload-text">Drag files here or <span class="upload-browse">browse</span></span>
+                  <span class="upload-hint">PDF, JPG, or PNG, up to 15 MB total</span>
+                  <input type="file" id="qPlans" name="plans" multiple accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" class="sr">
+                </label>
+                <p class="quiz-field-err" id="errPlans"></p>
+                <ul class="upload-list" id="uploadList"></ul>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="qProjectName">Project name (optional)</label>
+                  <input id="qProjectName" name="projectName" type="text" placeholder="e.g. Oak Ridge Phase 2">
+                </div>
+                <div class="field">
+                  <label for="qBidDue">Bid due date (optional)</label>
+                  <input id="qBidDue" name="bidDueDate" type="date">
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Step 2 — contact info, required (validated on Next) -->
+            <fieldset class="quiz-step" data-step="1" data-type="contact" hidden>
+              <legend tabindex="-1">Your contact info</legend>
+              <p class="quiz-note">So we know who to send the bid to.</p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="qName">Name</label>
+                  <input id="qName" name="name" type="text" autocomplete="name" placeholder="First and last" aria-describedby="errName">
+                  <p class="quiz-field-err" id="errName"></p>
+                </div>
+                <div class="field">
+                  <label for="qPhone">Phone</label>
+                  <input id="qPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(000) 000-0000" aria-describedby="errPhone">
+                  <p class="quiz-field-err" id="errPhone"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="qCompany">Company (optional)</label>
+                <input id="qCompany" name="company" type="text" autocomplete="organization" placeholder="Company or builder name">
+              </div>
+              <div class="field">
+                <label for="qEmail">Email</label>
+                <input id="qEmail" name="email" type="email" autocomplete="email" placeholder="you@email.com" aria-describedby="errEmail">
+                <p class="quiz-field-err" id="errEmail"></p>
+              </div>
+            </fieldset>
+
+            <!-- Step 3 — multi-select: needs a Next button, stays disabled until something's checked -->
+            <fieldset class="quiz-step" data-step="2" data-type="multi" hidden>
+              <legend tabindex="-1">What do you need done?</legend>
+              <div class="opt-grid">
+                <label class="opt"><input type="checkbox" name="need" value="Underground utilities (water, sewer, storm)" data-svc="Underground utilities"><span class="opt-face"><svg class="opt-ico" aria-hidden="true"><use href="#i-pipe"/></svg><span class="opt-label">Underground utilities <small>(water, sewer, storm)</small></span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="checkbox" name="need" value="Site prep &amp; grading" data-svc="Site prep &amp; grading"><span class="opt-face"><svg class="opt-ico" aria-hidden="true"><use href="#i-grade"/></svg><span class="opt-label">Site prep &amp; grading</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="checkbox" name="need" value="Excavation &amp; trenching" data-svc="Excavation &amp; trenching"><span class="opt-face"><svg class="opt-ico" aria-hidden="true"><use href="#i-excavator"/></svg><span class="opt-label">Excavation &amp; trenching</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="checkbox" name="need" value="Land clearing" data-svc="Land clearing"><span class="opt-face"><svg class="opt-ico" aria-hidden="true"><use href="#i-tree"/></svg><span class="opt-label">Land clearing</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="checkbox" name="need" value="Not sure yet"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><circle cx="12" cy="16.8" r=".6" fill="currentColor" stroke="none"/></svg><span class="opt-label">Not sure yet</span><i class="opt-check" aria-hidden="true"></i></span></label>
+              </div>
+            </fieldset>
+
+            <!-- Steps 4–6 — single-select: picking a tile auto-advances -->
+            <fieldset class="quiz-step" data-step="3" data-type="single" hidden>
+              <legend tabindex="-1">Who&rsquo;s the work for?</legend>
+              <div class="opt-grid">
+                <label class="opt"><input type="radio" name="who" value="Builder or general contractor"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5a8 8 0 0 1 16 0"/><path d="M2.5 15.5h19"/><rect x="10.5" y="3" width="3" height="3" rx=".5"/></svg><span class="opt-label">Builder or general contractor</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="who" value="Developer or commercial"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2"/></svg><span class="opt-label">Developer or commercial</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="who" value="Homeowner or landowner"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9.5h12V10"/></svg><span class="opt-label">Homeowner or landowner</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="who" value="Farm or agricultural"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 11v9h14v-9"/><path d="M12 20v-6a2 2 0 0 1 4 0v6"/></svg><span class="opt-label">Farm or agricultural</span><i class="opt-check" aria-hidden="true"></i></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-step" data-step="4" data-type="single" hidden>
+              <legend tabindex="-1">How big is the site?</legend>
+              <div class="opt-grid">
+                <label class="opt"><input type="radio" name="size" value="Under 1 acre"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 12h17M12 3.5v17"/></svg><span class="opt-label">Under 1 acre</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="size" value="1–5 acres"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 12h17M12 3.5v17"/></svg><span class="opt-label">1&ndash;5 acres</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="size" value="5+ acres"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 12h17M12 3.5v17"/></svg><span class="opt-label">5+ acres</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="size" value="Not sure"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><circle cx="12" cy="16.8" r=".6" fill="currentColor" stroke="none"/></svg><span class="opt-label">Not sure</span><i class="opt-check" aria-hidden="true"></i></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-step" data-step="5" data-type="single" hidden>
+              <legend tabindex="-1">When do you want to start?</legend>
+              <div class="opt-grid">
+                <label class="opt"><input type="radio" name="when" value="As soon as possible"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="opt-label">As soon as possible</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="when" value="Within 1–3 months"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg><span class="opt-label">Within 1&ndash;3 months</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="when" value="3–6 months out"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg><span class="opt-label">3&ndash;6 months out</span><i class="opt-check" aria-hidden="true"></i></span></label>
+                <label class="opt"><input type="radio" name="when" value="Just getting pricing"><span class="opt-face"><svg class="opt-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.5 3.5h5A2 2 0 0 1 19.5 5.5v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-4.5-4.5a2 2 0 0 1 0-2.8l8-8a2 2 0 0 1 1.4-.6Z"/><circle cx="16" cy="8" r="1.2" fill="currentColor" stroke="none"/></svg><span class="opt-label">Just getting pricing</span><i class="opt-check" aria-hidden="true"></i></span></label>
+              </div>
+            </fieldset>
+
+            <!-- Step 7 — notes, consent, and submit -->
+            <fieldset class="quiz-step" data-step="6" data-type="notes" hidden>
+              <legend tabindex="-1">Anything else?</legend>
+              <div class="field">
+                <label for="qNotes">Anything else we should know?</label>
+                <textarea id="qNotes" name="notes" placeholder="Access, soil conditions, schedule constraints, anything we should know" rows="3"></textarea>
+              </div>
+              <label class="quiz-consent"><input type="checkbox" id="qSms" name="sms">Text me updates about my bid request. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="privacy.html#sms-terms" target="_blank" rel="noopener">Privacy Policy &amp; SMS Terms</a>.</label>
+            </fieldset>
+
+            <p class="quiz-err" id="quizErr" role="alert"></p>
+            <p class="form-status" id="quizStatus" hidden role="alert"></p>
+            <div class="quiz-nav">
+              <button class="quiz-back" id="quizBack" type="button" hidden>Back</button>
+              <button class="btn btn-gold" id="quizNext" type="submit" hidden>Next</button>
+            </div>
+          </form>
+
+          <div class="quiz-done" id="quizDone" hidden tabindex="-1">
+            <div class="quiz-done-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4.5 4.5L19 8"/></svg></div>
+            <h3>Thanks, we got it.</h3>
+            <p>Rique will reach out within 1 business day to talk through the bid.</p>
+            <dl class="quiz-recap" id="quizRecap"></dl>
+            <p class="form-note">Mockup form &mdash; nothing was sent anywhere yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ADD US TO YOUR BID LIST ========== -->
+  <section class="section bid-list" id="bid-list" aria-labelledby="bid-list-title" data-reveal>
+    <div class="container bid-list-grid">
+      <div class="bid-list-intro">
+        <h2 id="bid-list-title">Not bidding a job right now?</h2>
+        <p>Add Pinnacle to your sub list for upcoming projects. Rique will send over his contact and vendor details.</p>
+      </div>
+      <div class="bid-list-card">
+        <form class="bid-list-form" id="bidListForm" novalidate>
+          <div class="bid-list-fields">
+            <div class="field">
+              <label for="blName">Name</label>
+              <input id="blName" name="name" type="text" autocomplete="name" placeholder="First and last" aria-describedby="blErrName">
+              <p class="quiz-field-err" id="blErrName"></p>
+            </div>
+            <div class="field">
+              <label for="blCompany">Company</label>
+              <input id="blCompany" name="company" type="text" autocomplete="organization" placeholder="Company name" aria-describedby="blErrCompany">
+              <p class="quiz-field-err" id="blErrCompany"></p>
+            </div>
+            <div class="field">
+              <label for="blEmail">Email</label>
+              <input id="blEmail" name="email" type="email" autocomplete="email" placeholder="you@email.com" aria-describedby="blErrEmail">
+              <p class="quiz-field-err" id="blErrEmail"></p>
+            </div>
+            <div class="field">
+              <label for="blPhone">Phone (optional)</label>
+              <input id="blPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(000) 000-0000">
+            </div>
+          </div>
+          <button class="btn btn-gold" type="submit">Add me to the list</button>
+          <p class="form-status" id="bidListStatus" hidden role="alert"></p>
+        </form>
+        <div class="bid-list-done" id="bidListDone" hidden tabindex="-1">
+          <p>You&rsquo;re on the list. Rique will reach out with his details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Pinnacle Projects LLC, home">
+          <img src="assets/logo.png?v=2" alt="" width="38" height="38">
+          <span class="brand-text">
+            <span class="brand-name">Pinnacle</span>
+            <span class="brand-sub">Projects LLC</span>
+          </span>
+        </a>
+        <p>Excavation, grading, and underground utility work across North Carolina. Owner-operated since 2022.</p>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="tel:+10000000000" data-cfg-href="phoneHref" data-cfg="phoneDisplay">(000) 000-0000</a></li>
+          <li><a href="mailto:hello@example.com" data-cfg-href="emailHref" data-cfg="email">email@placeholder.com</a></li>
+          <li>
+            <a class="ig-link" href="https://instagram.com/pinnacle_projects_inc" data-cfg-href="instagramUrl" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>@pinnacle_projects_inc
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year">2026</span> Pinnacle Projects LLC. All rights reserved.</span>
+      <span data-cfg="serviceArea">North Carolina</span>
+      <span class="foot-privacy"><a href="privacy.html">Privacy Policy</a></span>
+      <span class="foot-credit">Powered by <a href="https://ncsitesync.com" target="_blank" rel="noopener">SiteSync</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ============================================================
+     CONFIG — everything still waiting on Rique lives here.
+     Edit these values and the page + schema update together.
+     The same strings are hard-coded in the HTML as a no-JS
+     fallback, so update those too if no-JS visitors matter.
+     ============================================================ */
+  var CONFIG = {
+    businessName:    'Pinnacle Projects LLC',
+    owner:           'Rique Rojo',
+    founded:         '2022',
+
+    /* PLACEHOLDER — real number needed */
+    phoneDisplay:    '(000) 000-0000',
+    phoneHref:       'tel:+10000000000',
+
+    /* PLACEHOLDER — real address needed */
+    email:           'email@placeholder.com',
+    emailHref:       'mailto:email@placeholder.com',
+
+    instagramUrl:    'https://instagram.com/pinnacle_projects_inc',
+    instagramHandle: '@pinnacle_projects_inc',
+
+    serviceArea:      'North Carolina',
+    serviceAreaShort: 'North Carolina',
+    /* PLACEHOLDER — add the towns he actually covers, e.g.
+       ['Raleigh','Durham','Clayton','Smithfield']. Leave empty
+       and the page shows a "to be confirmed" chip instead. */
+    towns: [],
+
+    /* PLACEHOLDER — city/state for the LocalBusiness schema */
+    addressLocality: '',
+    addressRegion:   'NC',
+
+    /* Optional. Fill in to reveal the hero's play button. */
+    reelUrl: '',
+
+    /* Where the quote quiz POSTs its answers as JSON. Empty = the quiz
+       still works (console.logs the answers and shows the success panel),
+       it just doesn't send anywhere yet.
+       TODO: point this at the n8n webhook once it exists. */
+    formEndpoint: '',
+
+    /* Used by the schema + canonical. Swap for the real domain. */
+    siteUrl: 'https://pinnacleprojects.example/'
+  };
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s, c){ return (c || document).querySelector(s); }
+  function $$(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+
+  /* ---- bind CONFIG into the page ---- */
+  $$('[data-cfg]').forEach(function(el){
+    var v = CONFIG[el.getAttribute('data-cfg')];
+    if (v) el.textContent = v;
+  });
+  $$('[data-cfg-href]').forEach(function(el){
+    var v = CONFIG[el.getAttribute('data-cfg-href')];
+    if (v) el.setAttribute('href', v);
+  });
+  $$('[data-town]').forEach(function(el){
+    if (CONFIG.towns.length) el.textContent = CONFIG.towns[0];
+  });
+
+  var townList = $('#townList');
+  if (townList && CONFIG.towns.length){
+    townList.innerHTML = '';
+    CONFIG.towns.forEach(function(t){
+      var li = document.createElement('li');
+      li.textContent = t;
+      townList.appendChild(li);
+    });
+  }
+
+  var yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- LocalBusiness schema, built from CONFIG so it can't drift ---- */
+  (function schema(){
+    var data = {
+      '@context': 'https://schema.org',
+      '@type': 'GeneralContractor',
+      name: CONFIG.businessName,
+      description: 'Owner-operated excavation and site prep contractor: underground utilities, grading, trenching, and land clearing across ' + CONFIG.serviceArea + '.',
+      url: CONFIG.siteUrl,
+      image: CONFIG.siteUrl + 'assets/og-image.jpg',
+      logo: CONFIG.siteUrl + 'assets/icons/icon-512.png',
+      foundingDate: CONFIG.founded,
+      founder: { '@type': 'Person', name: CONFIG.owner },
+      areaServed: { '@type': 'State', name: CONFIG.serviceArea },
+      knowsAbout: ['Underground utilities','Site preparation','Grading','Excavation','Trenching','Land clearing']
+    };
+    /* only publish contact fields once they're real — a schema full of
+       placeholder digits is worse than an incomplete one */
+    if (CONFIG.phoneDisplay.indexOf('000') === -1) data.telephone = CONFIG.phoneDisplay;
+    if (CONFIG.email.indexOf('placeholder') === -1) data.email = CONFIG.email;
+    if (CONFIG.instagramUrl) data.sameAs = [CONFIG.instagramUrl];
+    if (CONFIG.addressLocality){
+      data.address = {
+        '@type': 'PostalAddress',
+        addressLocality: CONFIG.addressLocality,
+        addressRegion: CONFIG.addressRegion,
+        addressCountry: 'US'
+      };
+    }
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  })();
+
+  /* ---- header: solidify the capsule once the hero starts scrolling ---- */
+  var header = $('#siteHeader');
+  function onScroll(){ header.classList.toggle('stuck', window.pageYOffset > 24); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- mobile menu ---- */
+  var overlay = $('#navOverlay'), menuBtn = $('#menuBtn');
+  function setMenu(open){
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) $('#overlayClose').focus(); else menuBtn.focus({preventScroll:true});
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(true); });
+  $('#overlayClose').addEventListener('click', function(){ setMenu(false); });
+  $$('a', overlay).forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- nav scrollspy: marks the section you're actually looking at ---- */
+  if ('IntersectionObserver' in window){
+    var links = $$('.nav-list a');
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, {rootMargin: '-45% 0px -50% 0px'});
+    ['services','work','about','contact'].forEach(function(id){
+      var t = document.getElementById(id);
+      if (t) spy.observe(t);
+    });
+  }
+
+  /* ---- services: clicking "Request a bid" carries the choice into the
+     quote quiz ---- The <a href="#contact"> does the travelling on its own
+     (native anchor + the global smooth-scroll). This just tells the quiz
+     which "need" option to preselect — matched by data attribute, not
+     label text — via a custom event; initQuiz (below) listens and also
+     resets to step 1 if needed. */
+  $$('.spec-bid').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.dispatchEvent(new CustomEvent('svc:need', {detail: btn.dataset.need}));
+    });
+  });
+
+  /* ---- our work: 3D coverflow — current index drives --pos/--dist on each
+     card (see CSS), everything else (arrows, dots, click, swipe, keys) just
+     calls goTo(). Wraps at both ends, so the arrow buttons are never disabled. ---- */
+  (function initWork(){
+    var track = $('#workTrack'), prev = $('#workPrev'), next = $('#workNext');
+    if (!track || !prev || !next) return;
+    var cards = $$('.work-card', track);
+    var n = cards.length;
+    if (!n) return;
+    var dots = $$('.work-dot', $('#workDots') || track.parentNode);
+    var current = 0;
+
+    function render(){
+      cards.forEach(function(card, i){
+        var offset = i - current;
+        if (offset > n / 2) offset -= n;
+        if (offset < -n / 2) offset += n;
+        var dist = Math.abs(offset);
+        card.style.setProperty('--pos', offset);
+        card.style.setProperty('--dist', dist);
+        if (i === current) card.setAttribute('aria-current', 'true');
+        else card.removeAttribute('aria-current');
+        card.classList.toggle('is-far', dist > 2);
+        card.tabIndex = dist > 2 ? -1 : 0;
+      });
+      dots.forEach(function(dot, i){
+        dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+      });
+    }
+    function goTo(i){
+      current = ((i % n) + n) % n;
+      render();
+    }
+
+    prev.addEventListener('click', function(){ goTo(current - 1); });
+    next.addEventListener('click', function(){ goTo(current + 1); });
+
+    cards.forEach(function(card, i){
+      card.addEventListener('click', function(){ if (i !== current) goTo(i); });
+      card.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); if (i !== current) goTo(i); }
+      });
+    });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); });
+    });
+    track.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowLeft'){ e.preventDefault(); goTo(current - 1); }
+      else if (e.key === 'ArrowRight'){ e.preventDefault(); goTo(current + 1); }
+    });
+
+    /* swipe */
+    var touchX = null;
+    track.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+      touchX = null;
+    }, {passive:true});
+
+    render();
+  })();
+
+  /* ---- our work: fan-out entrance, once, first time the carousel is
+     scrolled into view. Cards start centered/small/invisible via inline
+     style; the observer swaps in the staggered transition and clears the
+     inline override, letting each card animate to its real --pos/--dist
+     position (already computed by initWork's render() above). The inline
+     transition is removed again once the sequence finishes so later
+     goTo() clicks go back to the normal .45s CSS transition. ---- */
+  (function initWorkEntrance(){
+    var track = $('#workTrack');
+    if (!track || reduce) return;
+    var cards = $$('.work-card', track);
+    if (!cards.length) return;
+    /* the active card's glint/drift/rise (see CSS) are gated behind
+       .has-entered too, added here at the same moment as the fan-out —
+       otherwise the first card (which ships with aria-current="true" in
+       the static HTML, so the carousel works with no JS) would play
+       those the instant the page loads. */
+    if (!('IntersectionObserver' in window)){ track.classList.add('has-entered'); return; }
+    cards.forEach(function(card){
+      card.style.opacity = '0';
+      card.style.transform = 'translate(-50%,-50%) scale(.75)';
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        track.classList.add('has-entered');
+        cards.forEach(function(card, i){
+          var delay = i * 70;
+          card.style.transition =
+            'transform .7s cubic-bezier(.2,.8,.2,1) ' + delay + 'ms, ' +
+            'opacity .7s cubic-bezier(.2,.8,.2,1) ' + delay + 'ms';
+          card.style.opacity = '';
+          card.style.transform = '';
+        });
+        setTimeout(function(){
+          cards.forEach(function(card){ card.style.transition = ''; });
+        }, (cards.length - 1) * 70 + 750);
+      });
+    }, {threshold: 0.3, rootMargin: '0px 0px -10% 0px'});
+    io.observe(track);
+  })();
+
+  /* ---- shared scroll-reveal: one observer for every section's one-time
+     animation (the hero's own page-load blur-in is separate and
+     untouched — it's meant to run immediately). Every [data-reveal]
+     element already carries its own hidden/final-state CSS, scoped as
+     html.js-anim ... for the hidden state and .is-visible for the final
+     one — this only ever adds .is-visible, once, then stops watching
+     that element, and also dispatches a "reveal" custom event on it so
+     anything that needs its own reaction to that exact moment (the
+     ground-cross-section controller's autoplay trigger, for one) can
+     hook in without a second observer instance. rootMargin's -10%
+     bottom trims the detection zone so an element has to be meaningfully
+     scrolled into the viewport, not just brushing the edge, before it
+     counts as "in view". Under reduced motion (or with no
+     IntersectionObserver support), skip the observer entirely and add
+     .is-visible (plus dispatch "reveal") to everything immediately — no
+     hidden flash, no motion. If the page loads already scrolled to a
+     hash target, only whatever's genuinely in view at that point ends up
+     "visible" here; everything else still waits for the user to scroll
+     to it. ---- */
+  (function initReveals(){
+    var targets = $$('[data-reveal]');
+    if (!targets.length) return;
+    function reveal(el){
+      el.classList.add('is-visible');
+      el.dispatchEvent(new CustomEvent('reveal'));
+    }
+    if (reduce || !('IntersectionObserver' in window)){
+      targets.forEach(reveal);
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        reveal(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, {threshold: 0.25, rootMargin: '0px 0px -10% 0px'});
+    targets.forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ---- our work: active-card tilt + pointer sheen — desktop, fine pointer
+     only. Tilts .work-shot (not .work-card, which already owns the
+     coverflow's own transform) toward the cursor, and updates --mx/--my for
+     the CSS-driven sheen. rAF-throttled; eases back to flat on mouse leave. ---- */
+  (function initWorkTilt(){
+    var track = $('#workTrack');
+    if (!track || reduce) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var raf = null;
+
+    function activeShot(){
+      var card = track.querySelector('.work-card[aria-current="true"]');
+      return card ? card.querySelector('.work-shot') : null;
+    }
+    function reset(){
+      var shot = activeShot();
+      if (!shot) return;
+      if (raf){ cancelAnimationFrame(raf); raf = null; }
+      shot.style.transition = 'transform .4s var(--ease)';
+      shot.style.transform = '';
+    }
+    track.addEventListener('mousemove', function(e){
+      var overActive = e.target.closest && e.target.closest('.work-card[aria-current="true"]');
+      if (!overActive){ reset(); return; }
+      var shot = overActive.querySelector('.work-shot');
+      var rect = shot.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width;
+      var py = (e.clientY - rect.top) / rect.height;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function(){
+        var rx = (0.5 - py) * 12, ry = (px - 0.5) * 12;   // +/- 6deg
+        shot.style.transition = '';
+        shot.style.transform = 'perspective(800px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+        shot.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        shot.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+      });
+    });
+    track.addEventListener('mouseleave', reset);
+  })();
+
+  /* ---- sticky call button: hidden over the hero (so it doesn't sit on top
+     of it) and over the quote form (so it doesn't sit over the form's own
+     buttons), visible in between. Two observers, one shared state — each
+     just updates its own flag and calls sync(), which is the single place
+     that decides visible = hero not in view AND contact not in view. */
+  (function initCallFab(){
+    var fab = $('#callFab'), hero = $('.hero'), contact = $('#contact');
+    if (!fab || !hero || !contact || !('IntersectionObserver' in window)) return;
+    var heroVisible = true, contactVisible = false;
+    function sync(){
+      fab.classList.toggle('is-visible', !heroVisible && !contactVisible);
+    }
+    /* threshold 0 (the default) — isIntersecting only goes false once every
+       last pixel of the hero, stat strip included, has scrolled off */
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ heroVisible = entry.isIntersecting; });
+      sync();
+    }).observe(hero);
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ contactVisible = entry.isIntersecting; });
+      sync();
+    }, {threshold: 0.1}).observe(contact);
+  })();
+
+  /* ---- hero reel button: only exists if there's something to play ---- */
+  var reelBtn = $('#reelBtn');
+  if (reelBtn && CONFIG.reelUrl){
+    reelBtn.hidden = false;
+    reelBtn.addEventListener('click', function(){
+      window.open(CONFIG.reelUrl, '_blank', 'noopener');
+    });
+  }
+
+  /* ---- quote quiz ----
+     7-step quiz: plans upload, contact info, need, who, size, when, then
+     notes/consent/submit. Every step advances only via the Next/Submit
+     button — Next stays disabled until the step has a valid selection
+     (upload and notes are both optional; contact validates on Next instead
+     of disabling Next up front). Answers are collected into one object,
+     console.logged, and — only if CONFIG.formEndpoint is set — POSTed as
+     multipart FormData so the uploaded plan files can ride along with it. */
+  (function initQuiz(){
+    var form = $('#quizForm');
+    if (!form) return;
+    var steps = $$('.quiz-step', form), n = steps.length;
+    var back = $('#quizBack'), next = $('#quizNext'), err = $('#quizErr');
+    var stepLabel = $('#quizStepLabel'), stepName = $('#quizStepName');
+    var fill = $('#quizProgressFill'), bar = $('#quizProgressBar');
+    var cur = 0, transitioning = false;
+
+    /* ---- plans upload: drag-and-drop + browse, up to 3 files / 15MB total.
+       selectedFiles is the one source of truth (not the <input>'s own
+       .files) so it survives Back/Forward the same way every other step's
+       typed values already do — the fieldset is only ever hidden, never
+       recreated. ---- */
+    var uploadZone = $('#uploadZone'), plansInput = $('#qPlans'), uploadList = $('#uploadList');
+    var selectedFiles = [];
+    var MAX_FILES = 3, MAX_TOTAL_BYTES = 15 * 1024 * 1024;
+    var ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
+
+    function formatSize(bytes){
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+    function totalBytes(){ return selectedFiles.reduce(function(sum, f){ return sum + f.size; }, 0); }
+    function isAcceptedType(file){
+      if (ACCEPTED_TYPES.indexOf(file.type) !== -1) return true;
+      return /\.(pdf|jpe?g|png)$/i.test(file.name);   // some browsers report an empty type
+    }
+    /* Next reads "Skip for now" until at least one file is attached — only
+       relevant while the upload step (always index 0) is on screen. */
+    function syncUploadNext(){
+      if (steps[cur] && steps[cur].dataset.type === 'upload') next.textContent = selectedFiles.length ? 'Next' : 'Skip for now';
+    }
+    function renderFiles(){
+      uploadList.innerHTML = '';
+      selectedFiles.forEach(function(file, i){
+        var li = document.createElement('li');
+        li.className = 'upload-item';
+        var nameSpan = document.createElement('span');
+        nameSpan.className = 'upload-name'; nameSpan.title = file.name; nameSpan.textContent = file.name;
+        var sizeSpan = document.createElement('span');
+        sizeSpan.className = 'upload-size'; sizeSpan.textContent = formatSize(file.size);
+        var removeBtn = document.createElement('button');
+        removeBtn.type = 'button'; removeBtn.className = 'upload-remove'; removeBtn.setAttribute('aria-label', 'Remove ' + file.name);
+        removeBtn.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>';
+        removeBtn.addEventListener('click', function(){ selectedFiles.splice(i, 1); renderFiles(); syncUploadNext(); });
+        li.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>';
+        li.appendChild(nameSpan); li.appendChild(sizeSpan); li.appendChild(removeBtn);
+        uploadList.appendChild(li);
+      });
+    }
+    function addFiles(fileList){
+      var msg = '';
+      Array.prototype.slice.call(fileList).forEach(function(file){
+        if (selectedFiles.length >= MAX_FILES){ msg = 'You can upload up to 3 files.'; return; }
+        if (!isAcceptedType(file)){ msg = 'That file type isn’t supported. Upload a PDF, JPG, or PNG.'; return; }
+        selectedFiles.push(file);
+      });
+      if (totalBytes() > MAX_TOTAL_BYTES){
+        while (selectedFiles.length && totalBytes() > MAX_TOTAL_BYTES){ selectedFiles.pop(); }
+        msg = 'Files are over 15 MB total. Remove one or upload a smaller version.';
+      }
+      fieldErr('errPlans', msg);
+      renderFiles();
+      syncUploadNext();
+    }
+    if (uploadZone){
+      uploadZone.addEventListener('dragover', function(e){ e.preventDefault(); uploadZone.classList.add('is-dragover'); });
+      uploadZone.addEventListener('dragleave', function(){ uploadZone.classList.remove('is-dragover'); });
+      uploadZone.addEventListener('drop', function(e){
+        e.preventDefault(); uploadZone.classList.remove('is-dragover');
+        addFiles(e.dataTransfer.files);
+      });
+      plansInput.addEventListener('change', function(){
+        addFiles(plansInput.files);
+        plansInput.value = '';   // reset so re-picking the same file still fires 'change'
+      });
+    }
+
+    /* Next stays disabled until the step has a selection — multi needs at
+       least one checkbox, single needs a checked radio. Upload, contact, and
+       notes are all exempt: upload/notes are optional by design, and
+       contact's Next is validated by validateContact() at submit time instead. */
+    function syncNext(){
+      var step = steps[cur];
+      var type = step.dataset.type;
+      next.disabled = (type === 'multi' || type === 'single') && !step.querySelector('input:checked');
+    }
+
+    function show(i, dir, focus){
+      if (transitioning) return;
+      var outgoing = steps[cur];
+      cur = i;
+      var incoming = steps[cur];
+      err.textContent = '';
+
+      stepLabel.textContent = 'Step ' + (cur + 1) + ' of ' + n;
+      stepName.textContent = incoming.querySelector('legend').textContent;
+      fill.style.width = ((cur + 1) / n * 100) + '%';
+      bar.setAttribute('aria-valuenow', cur + 1);
+
+      back.hidden = cur === 0;
+      var type = incoming.dataset.type;
+      /* Next shows on every step now — multi/single/contact all just say
+         "Next"; the upload step's Next reads "Skip for now" until a file is
+         attached; only the final notes step swaps in the submit label */
+      if (type === 'notes'){ next.hidden = false; next.innerHTML = 'Submit bid request <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>'; }
+      else if (type === 'upload'){ next.hidden = false; next.textContent = selectedFiles.length ? 'Next' : 'Skip for now'; }
+      else { next.hidden = false; next.textContent = 'Next'; }
+      syncNext();
+
+      var focusHeading = function(){ if (focus) incoming.querySelector('legend').focus({preventScroll: true}); };
+
+      if (reduce || !outgoing || outgoing === incoming){
+        steps.forEach(function(s, k){ s.hidden = k !== cur; });
+        focusHeading();
+        return;
+      }
+      transitioning = true;
+      back.disabled = true; next.disabled = true;
+      var outClass = dir > 0 ? 'is-out-l' : 'is-out-r';
+      var inClass = dir > 0 ? 'is-in-r' : 'is-in-l';
+      outgoing.classList.add(outClass);
+      incoming.hidden = false;
+      incoming.classList.add(inClass);
+      focusHeading();
+      setTimeout(function(){
+        outgoing.hidden = true;
+        outgoing.classList.remove(outClass);
+        incoming.classList.remove(inClass);
+        transitioning = false;
+        back.disabled = false;
+        syncNext();
+      }, 320);
+    }
+    function goTo(i, dir, focus){
+      if (i < 0 || i >= n) return;
+      show(i, dir, focus);
+    }
+
+    form.addEventListener('change', function(){ err.textContent = ''; syncNext(); });
+
+    function fieldErr(id, msg){ var p = $('#' + id); if (p) p.textContent = msg; }
+    function clearFieldErrs(){ $$('.quiz-field-err', form).forEach(function(p){ p.textContent = ''; }); }
+    function validateContact(){
+      clearFieldErrs();
+      var ok = true, firstBad = null;
+      var name = $('#qName').value.trim(), phone = $('#qPhone').value.trim(), email = $('#qEmail').value.trim();
+      if (name.length < 2){ fieldErr('errName', 'Enter your name so we know who we’re talking to.'); firstBad = firstBad || $('#qName'); ok = false; }
+      if (phone.replace(/\D/g, '').length < 10){ fieldErr('errPhone', 'Enter a phone number so we can reach you.'); firstBad = firstBad || $('#qPhone'); ok = false; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ fieldErr('errEmail', 'Enter a valid email so we can send your quote.'); firstBad = firstBad || $('#qEmail'); ok = false; }
+      if (firstBad) firstBad.focus();
+      return ok;
+    }
+
+    function val(name){ var c = form.querySelector('input[name="' + name + '"]:checked'); return c ? c.value : ''; }
+    function vals(name){ return $$('input[name="' + name + '"]:checked', form).map(function(c){ return c.value; }); }
+
+    function finish(){
+      var data = {
+        type: 'bid_request',
+        need: vals('need'), who: val('who'), size: val('size'), when: val('when'),
+        projectName: $('#qProjectName').value.trim(), bidDueDate: $('#qBidDue').value,
+        plans: selectedFiles.map(function(f){ return f.name; }),
+        name: $('#qName').value.trim(), company: $('#qCompany').value.trim(), phone: $('#qPhone').value.trim(), email: $('#qEmail').value.trim(),
+        notes: $('#qNotes').value.trim(), smsConsent: $('#qSms').checked
+      };
+      console.log('Bid request submission:', data);
+
+      function showSuccess(){
+        var rows = [
+          ['Plans', data.plans.length ? data.plans.join(', ') : '—'],
+          ['Project', data.projectName || '—'], ['Bid due', data.bidDueDate || '—'],
+          ['Name', data.name], ['Company', data.company || '—'], ['Phone', data.phone], ['Email', data.email],
+          ['Need', data.need.join(', ') || '—'], ['Who it’s for', data.who || '—'],
+          ['Site size', data.size || '—'], ['Start', data.when || '—'],
+          ['Text updates', data.smsConsent ? 'Yes' : 'No']
+        ];
+        var dl = $('#quizRecap'); dl.innerHTML = '';
+        rows.forEach(function(r){
+          var dt = document.createElement('dt'), dd = document.createElement('dd');
+          dt.textContent = r[0]; dd.textContent = r[1];
+          dl.appendChild(dt); dl.appendChild(dd);
+        });
+        form.hidden = true;
+        $('.quiz-progress').hidden = true;
+        var done = $('#quizDone'); done.hidden = false; done.focus({preventScroll: true});
+      }
+
+      if (!CONFIG.formEndpoint){ showSuccess(); return; }
+
+      /* Multipart so the files ride along with the answers: one "data"
+         field with everything else as a JSON string, plus each plan file
+         appended as "plans" under its own name. No Content-Type header —
+         fetch/the browser set the multipart boundary automatically. */
+      var fd = new FormData();
+      fd.append('data', JSON.stringify(data));
+      selectedFiles.forEach(function(file){ fd.append('plans', file, file.name); });
+
+      next.disabled = true;
+      var restoreLabel = next.innerHTML;
+      next.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Sending…';
+      quizStatus.hidden = true; quizStatus.textContent = '';
+
+      fetch(CONFIG.formEndpoint, { method: 'POST', body: fd })
+        .then(function(res){ if (!res.ok) throw new Error('bad status'); showSuccess(); })
+        .catch(function(){
+          next.disabled = false;
+          next.innerHTML = restoreLabel;
+          quizStatus.hidden = false;
+          quizStatus.textContent = 'Something went wrong sending your request. Try again, or call us directly at ' + CONFIG.phoneDisplay + '.';
+        });
+    }
+
+    var quizStatus = $('#quizStatus');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var step = steps[cur];
+      if (step.dataset.type === 'upload'){
+        goTo(cur + 1, 1, true);   // entirely optional — never blocks Next
+      } else if (step.dataset.type === 'contact'){
+        if (validateContact()) goTo(cur + 1, 1, true);
+      } else if (step.dataset.type === 'multi'){
+        if (!vals('need').length){ err.textContent = 'Pick at least one to continue.'; return; }
+        goTo(cur + 1, 1, true);
+      } else if (step.dataset.type === 'single'){
+        /* Next is disabled until a tile is checked, so reaching here means
+           it's already valid — no extra validation message needed. */
+        goTo(cur + 1, 1, true);
+      } else if (step.dataset.type === 'notes'){
+        finish();   // final step — notes and SMS consent are both optional
+      }
+    });
+    back.addEventListener('click', function(){ goTo(cur - 1, -1, true); });
+
+    /* ---- services tiles hand off here: preselect the matching "need"
+       checkbox on the need step (matched by data-svc, not label text) and
+       reset to step 1 (plans) in the background — it must not skip the
+       plans or contact-info steps, so it never jumps straight to step 3. ---- */
+    document.addEventListener('svc:need', function(e){
+      var matched = null;
+      $$('input[name="need"]', steps[2]).forEach(function(cb){
+        cb.checked = cb.dataset.svc === e.detail;
+        if (cb.checked) matched = cb;
+      });
+      if (matched) matched.dispatchEvent(new Event('change', {bubbles: true}));
+      if (cur !== 0) goTo(0, -1, false);
+    });
+
+    show(0, 0, false);
+  })();
+
+  /* ---- add us to your bid list: separate compact form, same validation /
+     sending / failure pattern as the quiz's contact step. ---- */
+  (function initBidList(){
+    var form = $('#bidListForm');
+    if (!form) return;
+    var btn = form.querySelector('button[type="submit"]');
+    var status = $('#bidListStatus'), done = $('#bidListDone');
+
+    function fieldErr(id, msg){ var p = $('#' + id); if (p) p.textContent = msg; }
+    function clearFieldErrs(){ $$('.quiz-field-err', form).forEach(function(p){ p.textContent = ''; }); }
+    function validate(){
+      clearFieldErrs();
+      var ok = true, firstBad = null;
+      var name = $('#blName').value.trim(), company = $('#blCompany').value.trim(), email = $('#blEmail').value.trim();
+      if (name.length < 2){ fieldErr('blErrName', 'Enter your name.'); firstBad = firstBad || $('#blName'); ok = false; }
+      if (!company){ fieldErr('blErrCompany', 'Enter your company name.'); firstBad = firstBad || $('#blCompany'); ok = false; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ fieldErr('blErrEmail', 'Enter a valid email.'); firstBad = firstBad || $('#blEmail'); ok = false; }
+      if (firstBad) firstBad.focus();
+      return ok;
+    }
+    function showSuccess(){ form.hidden = true; done.hidden = false; done.focus({preventScroll: true}); }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!validate()) return;
+      var data = {
+        type: 'bid_list',
+        name: $('#blName').value.trim(), company: $('#blCompany').value.trim(),
+        email: $('#blEmail').value.trim(), phone: $('#blPhone').value.trim()
+      };
+      console.log('Bid list signup:', data);
+
+      if (!CONFIG.formEndpoint){ showSuccess(); return; }
+
+      btn.disabled = true;
+      var restoreLabel = btn.innerHTML;
+      btn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Sending…';
+      status.hidden = true; status.textContent = '';
+
+      fetch(CONFIG.formEndpoint, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify(data)
+      }).then(function(res){ if (!res.ok) throw new Error('bad status'); showSuccess(); })
+        .catch(function(){
+          btn.disabled = false;
+          btn.innerHTML = restoreLabel;
+          status.hidden = false;
+          status.textContent = 'Something went wrong sending your request. Try again, or call us directly at ' + CONFIG.phoneDisplay + '.';
+        });
+    });
+  })();
+
+})();
+</script>
+</body>
+</html>
